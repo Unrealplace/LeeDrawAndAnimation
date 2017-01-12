@@ -1,0 +1,697 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B60648FA1E17ECDD00536C2E /* LeeCAKeyframeAnimation2.m in Sources */ = {isa = PBXBuildFile; fileRef = B60648F91E17ECDD00536C2E /* LeeCAKeyframeAnimation2.m */; };
+		B60648FD1E180B6000536C2E /* LeeCATransition3.m in Sources */ = {isa = PBXBuildFile; fileRef = B60648FC1E180B6000536C2E /* LeeCATransition3.m */; };
+		B61E56431E27C50600F5901D /* LeeDrawView2.m in Sources */ = {isa = PBXBuildFile; fileRef = B61E56421E27C50600F5901D /* LeeDrawView2.m */; };
+		B62C01961E1D3DF60032BF64 /* LeeDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = B62C01951E1D3DF60032BF64 /* LeeDrawView.m */; };
+		B62D187D1E18A73500556B0B /* LeeCASpringAnimation4.m in Sources */ = {isa = PBXBuildFile; fileRef = B62D187C1E18A73500556B0B /* LeeCASpringAnimation4.m */; };
+		B62D18801E18B28F00556B0B /* LeeCAAnimationGroup5.m in Sources */ = {isa = PBXBuildFile; fileRef = B62D187F1E18B28F00556B0B /* LeeCAAnimationGroup5.m */; };
+		B62D18831E18BC5900556B0B /* LeeCATransaction6.m in Sources */ = {isa = PBXBuildFile; fileRef = B62D18821E18BC5900556B0B /* LeeCATransaction6.m */; };
+		B62D18881E192B2100556B0B /* LeeAnimation_1.m in Sources */ = {isa = PBXBuildFile; fileRef = B62D18871E192B2100556B0B /* LeeAnimation_1.m */; };
+		B62D188B1E192BF600556B0B /* LeeView1.m in Sources */ = {isa = PBXBuildFile; fileRef = B62D188A1E192BF600556B0B /* LeeView1.m */; };
+		B62D188E1E19378000556B0B /* LeeAnimation_2.m in Sources */ = {isa = PBXBuildFile; fileRef = B62D188D1E19378000556B0B /* LeeAnimation_2.m */; };
+		B62D18911E193EFC00556B0B /* LeeView2.m in Sources */ = {isa = PBXBuildFile; fileRef = B62D18901E193EFC00556B0B /* LeeView2.m */; };
+		B62D18941E19412F00556B0B /* LeeUIDynamic.m in Sources */ = {isa = PBXBuildFile; fileRef = B62D18931E19412F00556B0B /* LeeUIDynamic.m */; };
+		B62D18971E19516100556B0B /* LeeCAEmitterLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B62D18961E19516100556B0B /* LeeCAEmitterLayer.m */; };
+		B62D189A1E19517600556B0B /* LeeCAReplicatorLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B62D18991E19517600556B0B /* LeeCAReplicatorLayer.m */; };
+		B62D189D1E19569F00556B0B /* LeeBoomBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = B62D189C1E19569F00556B0B /* LeeBoomBtn.m */; };
+		B6A3FC531E1797620067172C /* 111.png in Resources */ = {isa = PBXBuildFile; fileRef = B6A3FC521E1797620067172C /* 111.png */; };
+		B6A3FC551E1797670067172C /* 222.png in Resources */ = {isa = PBXBuildFile; fileRef = B6A3FC541E1797670067172C /* 222.png */; };
+		B6A3FC571E1798690067172C /* 屏幕快照 2016-12-31 下午3.40.11.png in Resources */ = {isa = PBXBuildFile; fileRef = B6A3FC561E1798690067172C /* 屏幕快照 2016-12-31 下午3.40.11.png */; };
+		B6AFB6E21E1A2B920016B4C2 /* loadLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AFB6E11E1A2B920016B4C2 /* loadLayer.m */; };
+		B6AFB6E51E1A387E0016B4C2 /* LeeCATransform3D.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AFB6E41E1A387E0016B4C2 /* LeeCATransform3D.m */; };
+		B6AFB6E81E1A44B40016B4C2 /* LeeCGAffineTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AFB6E71E1A44B40016B4C2 /* LeeCGAffineTransform.m */; };
+		B6B926AF1E2670800077EA94 /* LeeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B926AE1E2670800077EA94 /* LeeLayer.m */; };
+		B6C50E1E1E1E865200F00CB1 /* LeeDrawView1.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C50E1D1E1E865200F00CB1 /* LeeDrawView1.m */; };
+		B6D1887C1E1BEEBC0016F7D3 /* LeeUiViewAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D1887B1E1BEEBC0016F7D3 /* LeeUiViewAnimation.m */; };
+		B6D482501E154B5C00BA53F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D4824F1E154B5C00BA53F4 /* main.m */; };
+		B6D482531E154B5C00BA53F4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D482521E154B5C00BA53F4 /* AppDelegate.m */; };
+		B6D482561E154B5C00BA53F4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D482551E154B5C00BA53F4 /* ViewController.m */; };
+		B6D482591E154B5C00BA53F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6D482571E154B5C00BA53F4 /* Main.storyboard */; };
+		B6D4825B1E154B5D00BA53F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6D4825A1E154B5D00BA53F4 /* Assets.xcassets */; };
+		B6D4825E1E154B5D00BA53F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6D4825C1E154B5D00BA53F4 /* LaunchScreen.storyboard */; };
+		B6D482691E154B5D00BA53F4 /* LeeAnimationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D482681E154B5D00BA53F4 /* LeeAnimationTests.m */; };
+		B6D482741E154B5D00BA53F4 /* LeeAnimationUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D482731E154B5D00BA53F4 /* LeeAnimationUITests.m */; };
+		B6D482831E15522200BA53F4 /* LeeBaseAnimationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D482821E15522200BA53F4 /* LeeBaseAnimationVC.m */; };
+		B6D482861E15525B00BA53F4 /* LeeAnimation1.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D482851E15525B00BA53F4 /* LeeAnimation1.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B6D482651E154B5D00BA53F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B6D482431E154B5C00BA53F4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B6D4824A1E154B5C00BA53F4;
+			remoteInfo = LeeAnimation;
+		};
+		B6D482701E154B5D00BA53F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B6D482431E154B5C00BA53F4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B6D4824A1E154B5C00BA53F4;
+			remoteInfo = LeeAnimation;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B60648F81E17ECDD00536C2E /* LeeCAKeyframeAnimation2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeeCAKeyframeAnimation2.h; sourceTree = "<group>"; };
+		B60648F91E17ECDD00536C2E /* LeeCAKeyframeAnimation2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeeCAKeyframeAnimation2.m; sourceTree = "<group>"; };
+		B60648FB1E180B6000536C2E /* LeeCATransition3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeeCATransition3.h; sourceTree = "<group>"; };
+		B60648FC1E180B6000536C2E /* LeeCATransition3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeeCATransition3.m; sourceTree = "<group>"; };
+		B61E56411E27C50600F5901D /* LeeDrawView2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeeDrawView2.h; sourceTree = "<group>"; };
+		B61E56421E27C50600F5901D /* LeeDrawView2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeeDrawView2.m; sourceTree = "<group>"; };
+		B62C01941E1D3DF60032BF64 /* LeeDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeeDrawView.h; sourceTree = "<group>"; };
+		B62C01951E1D3DF60032BF64 /* LeeDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeeDrawView.m; sourceTree = "<group>"; };
+		B62D187B1E18A73500556B0B /* LeeCASpringAnimation4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeeCASpringAnimation4.h; sourceTree = "<group>"; };
+		B62D187C1E18A73500556B0B /* LeeCASpringAnimation4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeeCASpringAnimation4.m; sourceTree = "<group>"; };
+		B62D187E1E18B28F00556B0B /* LeeCAAnimationGroup5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeeCAAnimationGroup5.h; sourceTree = "<group>"; };
+		B62D187F1E18B28F00556B0B /* LeeCAAnimationGroup5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeeCAAnimationGroup5.m; sourceTree = "<group>"; };
+		B62D18811E18BC5900556B0B /* LeeCATransaction6.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeeCATransaction6.h; sourceTree = "<group>"; };
+		B62D18821E18BC5900556B0B /* LeeCATransaction6.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeeCATransaction6.m; sourceTree = "<group>"; };
+		B62D18861E192B2100556B0B /* LeeAnimation_1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeeAnimation_1.h; sourceTree = "<group>"; };
+		B62D18871E192B2100556B0B /* LeeAnimation_1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeeAnimation_1.m; sourceTree = "<group>"; };
+		B62D18891E192BF600556B0B /* LeeView1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeeView1.h; sourceTree = "<group>"; };
+		B62D188A1E192BF600556B0B /* LeeView1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeeView1.m; sourceTree = "<group>"; };
+		B62D188C1E19378000556B0B /* LeeAnimation_2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeeAnimation_2.h; sourceTree = "<group>"; };
+		B62D188D1E19378000556B0B /* LeeAnimation_2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeeAnimation_2.m; sourceTree = "<group>"; };
+		B62D188F1E193EFC00556B0B /* LeeView2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeeView2.h; sourceTree = "<group>"; };
+		B62D18901E193EFC00556B0B /* LeeView2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeeView2.m; sourceTree = "<group>"; };
+		B62D18921E19412F00556B0B /* LeeUIDynamic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeeUIDynamic.h; sourceTree = "<group>"; };
+		B62D18931E19412F00556B0B /* LeeUIDynamic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeeUIDynamic.m; sourceTree = "<group>"; };
+		B62D18951E19516100556B0B /* LeeCAEmitterLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeeCAEmitterLayer.h; sourceTree = "<group>"; };
+		B62D18961E19516100556B0B /* LeeCAEmitterLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeeCAEmitterLayer.m; sourceTree = "<group>"; };
+		B62D18981E19517600556B0B /* LeeCAReplicatorLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeeCAReplicatorLayer.h; sourceTree = "<group>"; };
+		B62D18991E19517600556B0B /* LeeCAReplicatorLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeeCAReplicatorLayer.m; sourceTree = "<group>"; };
+		B62D189B1E19569F00556B0B /* LeeBoomBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeeBoomBtn.h; sourceTree = "<group>"; };
+		B62D189C1E19569F00556B0B /* LeeBoomBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeeBoomBtn.m; sourceTree = "<group>"; };
+		B6A3FC521E1797620067172C /* 111.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 111.png; sourceTree = "<group>"; };
+		B6A3FC541E1797670067172C /* 222.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 222.png; sourceTree = "<group>"; };
+		B6A3FC561E1798690067172C /* 屏幕快照 2016-12-31 下午3.40.11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "屏幕快照 2016-12-31 下午3.40.11.png"; sourceTree = "<group>"; };
+		B6AFB6E01E1A2B920016B4C2 /* loadLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = loadLayer.h; path = ../loadLayer.h; sourceTree = "<group>"; };
+		B6AFB6E11E1A2B920016B4C2 /* loadLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = loadLayer.m; path = ../loadLayer.m; sourceTree = "<group>"; };
+		B6AFB6E31E1A387E0016B4C2 /* LeeCATransform3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeeCATransform3D.h; sourceTree = "<group>"; };
+		B6AFB6E41E1A387E0016B4C2 /* LeeCATransform3D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeeCATransform3D.m; sourceTree = "<group>"; };
+		B6AFB6E61E1A44B40016B4C2 /* LeeCGAffineTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeeCGAffineTransform.h; sourceTree = "<group>"; };
+		B6AFB6E71E1A44B40016B4C2 /* LeeCGAffineTransform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeeCGAffineTransform.m; sourceTree = "<group>"; };
+		B6B926AD1E2670800077EA94 /* LeeLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeeLayer.h; sourceTree = "<group>"; };
+		B6B926AE1E2670800077EA94 /* LeeLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeeLayer.m; sourceTree = "<group>"; };
+		B6C50E1C1E1E865200F00CB1 /* LeeDrawView1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeeDrawView1.h; sourceTree = "<group>"; };
+		B6C50E1D1E1E865200F00CB1 /* LeeDrawView1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeeDrawView1.m; sourceTree = "<group>"; };
+		B6D1887A1E1BEEBC0016F7D3 /* LeeUiViewAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeeUiViewAnimation.h; sourceTree = "<group>"; };
+		B6D1887B1E1BEEBC0016F7D3 /* LeeUiViewAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeeUiViewAnimation.m; sourceTree = "<group>"; };
+		B6D4824B1E154B5C00BA53F4 /* LeeAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeeAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6D4824F1E154B5C00BA53F4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B6D482511E154B5C00BA53F4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B6D482521E154B5C00BA53F4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B6D482541E154B5C00BA53F4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		B6D482551E154B5C00BA53F4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B6D482581E154B5C00BA53F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B6D4825A1E154B5D00BA53F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B6D4825D1E154B5D00BA53F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B6D4825F1E154B5D00BA53F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6D482641E154B5D00BA53F4 /* LeeAnimationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeeAnimationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6D482681E154B5D00BA53F4 /* LeeAnimationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeeAnimationTests.m; sourceTree = "<group>"; };
+		B6D4826A1E154B5D00BA53F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6D4826F1E154B5D00BA53F4 /* LeeAnimationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeeAnimationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6D482731E154B5D00BA53F4 /* LeeAnimationUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeeAnimationUITests.m; sourceTree = "<group>"; };
+		B6D482751E154B5D00BA53F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6D482811E15522200BA53F4 /* LeeBaseAnimationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeeBaseAnimationVC.h; sourceTree = "<group>"; };
+		B6D482821E15522200BA53F4 /* LeeBaseAnimationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeeBaseAnimationVC.m; sourceTree = "<group>"; };
+		B6D482841E15525B00BA53F4 /* LeeAnimation1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeeAnimation1.h; sourceTree = "<group>"; };
+		B6D482851E15525B00BA53F4 /* LeeAnimation1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeeAnimation1.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B6D482481E154B5C00BA53F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6D482611E154B5D00BA53F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6D4826C1E154B5D00BA53F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B62D18841E192AE500556B0B /* 核心动画 */ = {
+			isa = PBXGroup;
+			children = (
+				B60648F81E17ECDD00536C2E /* LeeCAKeyframeAnimation2.h */,
+				B60648F91E17ECDD00536C2E /* LeeCAKeyframeAnimation2.m */,
+				B60648FB1E180B6000536C2E /* LeeCATransition3.h */,
+				B60648FC1E180B6000536C2E /* LeeCATransition3.m */,
+				B6D482841E15525B00BA53F4 /* LeeAnimation1.h */,
+				B6D482851E15525B00BA53F4 /* LeeAnimation1.m */,
+				B62D187B1E18A73500556B0B /* LeeCASpringAnimation4.h */,
+				B62D187C1E18A73500556B0B /* LeeCASpringAnimation4.m */,
+				B62D187E1E18B28F00556B0B /* LeeCAAnimationGroup5.h */,
+				B62D187F1E18B28F00556B0B /* LeeCAAnimationGroup5.m */,
+				B62D18811E18BC5900556B0B /* LeeCATransaction6.h */,
+				B62D18821E18BC5900556B0B /* LeeCATransaction6.m */,
+				B62D18921E19412F00556B0B /* LeeUIDynamic.h */,
+				B62D18931E19412F00556B0B /* LeeUIDynamic.m */,
+				B62D18951E19516100556B0B /* LeeCAEmitterLayer.h */,
+				B62D18961E19516100556B0B /* LeeCAEmitterLayer.m */,
+				B62D189B1E19569F00556B0B /* LeeBoomBtn.h */,
+				B62D189C1E19569F00556B0B /* LeeBoomBtn.m */,
+				B62D18981E19517600556B0B /* LeeCAReplicatorLayer.h */,
+				B62D18991E19517600556B0B /* LeeCAReplicatorLayer.m */,
+				B6AFB6E01E1A2B920016B4C2 /* loadLayer.h */,
+				B6AFB6E11E1A2B920016B4C2 /* loadLayer.m */,
+				B6AFB6E31E1A387E0016B4C2 /* LeeCATransform3D.h */,
+				B6AFB6E41E1A387E0016B4C2 /* LeeCATransform3D.m */,
+				B6AFB6E61E1A44B40016B4C2 /* LeeCGAffineTransform.h */,
+				B6AFB6E71E1A44B40016B4C2 /* LeeCGAffineTransform.m */,
+				B6D1887A1E1BEEBC0016F7D3 /* LeeUiViewAnimation.h */,
+				B6D1887B1E1BEEBC0016F7D3 /* LeeUiViewAnimation.m */,
+				B62C01941E1D3DF60032BF64 /* LeeDrawView.h */,
+				B62C01951E1D3DF60032BF64 /* LeeDrawView.m */,
+				B6C50E1C1E1E865200F00CB1 /* LeeDrawView1.h */,
+				B6C50E1D1E1E865200F00CB1 /* LeeDrawView1.m */,
+				B61E56411E27C50600F5901D /* LeeDrawView2.h */,
+				B61E56421E27C50600F5901D /* LeeDrawView2.m */,
+				B6B926AD1E2670800077EA94 /* LeeLayer.h */,
+				B6B926AE1E2670800077EA94 /* LeeLayer.m */,
+			);
+			name = "核心动画";
+			sourceTree = "<group>";
+		};
+		B62D18851E192B0300556B0B /* 综合动画演练 */ = {
+			isa = PBXGroup;
+			children = (
+				B62D18861E192B2100556B0B /* LeeAnimation_1.h */,
+				B62D18871E192B2100556B0B /* LeeAnimation_1.m */,
+				B62D18891E192BF600556B0B /* LeeView1.h */,
+				B62D188A1E192BF600556B0B /* LeeView1.m */,
+				B62D188C1E19378000556B0B /* LeeAnimation_2.h */,
+				B62D188D1E19378000556B0B /* LeeAnimation_2.m */,
+				B62D188F1E193EFC00556B0B /* LeeView2.h */,
+				B62D18901E193EFC00556B0B /* LeeView2.m */,
+			);
+			name = "综合动画演练";
+			sourceTree = "<group>";
+		};
+		B6D482421E154B5C00BA53F4 = {
+			isa = PBXGroup;
+			children = (
+				B6D4824D1E154B5C00BA53F4 /* LeeAnimation */,
+				B6D482671E154B5D00BA53F4 /* LeeAnimationTests */,
+				B6D482721E154B5D00BA53F4 /* LeeAnimationUITests */,
+				B6D4824C1E154B5C00BA53F4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B6D4824C1E154B5C00BA53F4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B6D4824B1E154B5C00BA53F4 /* LeeAnimation.app */,
+				B6D482641E154B5D00BA53F4 /* LeeAnimationTests.xctest */,
+				B6D4826F1E154B5D00BA53F4 /* LeeAnimationUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B6D4824D1E154B5C00BA53F4 /* LeeAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				B6D482511E154B5C00BA53F4 /* AppDelegate.h */,
+				B6D482521E154B5C00BA53F4 /* AppDelegate.m */,
+				B6A3FC521E1797620067172C /* 111.png */,
+				B6A3FC541E1797670067172C /* 222.png */,
+				B6A3FC561E1798690067172C /* 屏幕快照 2016-12-31 下午3.40.11.png */,
+				B6D482541E154B5C00BA53F4 /* ViewController.h */,
+				B6D482551E154B5C00BA53F4 /* ViewController.m */,
+				B62D18851E192B0300556B0B /* 综合动画演练 */,
+				B62D18841E192AE500556B0B /* 核心动画 */,
+				B6D482811E15522200BA53F4 /* LeeBaseAnimationVC.h */,
+				B6D482821E15522200BA53F4 /* LeeBaseAnimationVC.m */,
+				B6D482571E154B5C00BA53F4 /* Main.storyboard */,
+				B6D4825A1E154B5D00BA53F4 /* Assets.xcassets */,
+				B6D4825C1E154B5D00BA53F4 /* LaunchScreen.storyboard */,
+				B6D4825F1E154B5D00BA53F4 /* Info.plist */,
+				B6D4824E1E154B5C00BA53F4 /* Supporting Files */,
+			);
+			path = LeeAnimation;
+			sourceTree = "<group>";
+		};
+		B6D4824E1E154B5C00BA53F4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B6D4824F1E154B5C00BA53F4 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B6D482671E154B5D00BA53F4 /* LeeAnimationTests */ = {
+			isa = PBXGroup;
+			children = (
+				B6D482681E154B5D00BA53F4 /* LeeAnimationTests.m */,
+				B6D4826A1E154B5D00BA53F4 /* Info.plist */,
+			);
+			path = LeeAnimationTests;
+			sourceTree = "<group>";
+		};
+		B6D482721E154B5D00BA53F4 /* LeeAnimationUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B6D482731E154B5D00BA53F4 /* LeeAnimationUITests.m */,
+				B6D482751E154B5D00BA53F4 /* Info.plist */,
+			);
+			path = LeeAnimationUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B6D4824A1E154B5C00BA53F4 /* LeeAnimation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6D482781E154B5D00BA53F4 /* Build configuration list for PBXNativeTarget "LeeAnimation" */;
+			buildPhases = (
+				B6D482471E154B5C00BA53F4 /* Sources */,
+				B6D482481E154B5C00BA53F4 /* Frameworks */,
+				B6D482491E154B5C00BA53F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LeeAnimation;
+			productName = LeeAnimation;
+			productReference = B6D4824B1E154B5C00BA53F4 /* LeeAnimation.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B6D482631E154B5D00BA53F4 /* LeeAnimationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6D4827B1E154B5D00BA53F4 /* Build configuration list for PBXNativeTarget "LeeAnimationTests" */;
+			buildPhases = (
+				B6D482601E154B5D00BA53F4 /* Sources */,
+				B6D482611E154B5D00BA53F4 /* Frameworks */,
+				B6D482621E154B5D00BA53F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B6D482661E154B5D00BA53F4 /* PBXTargetDependency */,
+			);
+			name = LeeAnimationTests;
+			productName = LeeAnimationTests;
+			productReference = B6D482641E154B5D00BA53F4 /* LeeAnimationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B6D4826E1E154B5D00BA53F4 /* LeeAnimationUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6D4827E1E154B5D00BA53F4 /* Build configuration list for PBXNativeTarget "LeeAnimationUITests" */;
+			buildPhases = (
+				B6D4826B1E154B5D00BA53F4 /* Sources */,
+				B6D4826C1E154B5D00BA53F4 /* Frameworks */,
+				B6D4826D1E154B5D00BA53F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B6D482711E154B5D00BA53F4 /* PBXTargetDependency */,
+			);
+			name = LeeAnimationUITests;
+			productName = LeeAnimationUITests;
+			productReference = B6D4826F1E154B5D00BA53F4 /* LeeAnimationUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B6D482431E154B5C00BA53F4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = LiYang;
+				TargetAttributes = {
+					B6D4824A1E154B5C00BA53F4 = {
+						CreatedOnToolsVersion = 8.2;
+						ProvisioningStyle = Automatic;
+					};
+					B6D482631E154B5D00BA53F4 = {
+						CreatedOnToolsVersion = 8.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B6D4824A1E154B5C00BA53F4;
+					};
+					B6D4826E1E154B5D00BA53F4 = {
+						CreatedOnToolsVersion = 8.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B6D4824A1E154B5C00BA53F4;
+					};
+				};
+			};
+			buildConfigurationList = B6D482461E154B5C00BA53F4 /* Build configuration list for PBXProject "LeeAnimation" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B6D482421E154B5C00BA53F4;
+			productRefGroup = B6D4824C1E154B5C00BA53F4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B6D4824A1E154B5C00BA53F4 /* LeeAnimation */,
+				B6D482631E154B5D00BA53F4 /* LeeAnimationTests */,
+				B6D4826E1E154B5D00BA53F4 /* LeeAnimationUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B6D482491E154B5C00BA53F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6A3FC571E1798690067172C /* 屏幕快照 2016-12-31 下午3.40.11.png in Resources */,
+				B6A3FC551E1797670067172C /* 222.png in Resources */,
+				B6D4825E1E154B5D00BA53F4 /* LaunchScreen.storyboard in Resources */,
+				B6D4825B1E154B5D00BA53F4 /* Assets.xcassets in Resources */,
+				B6A3FC531E1797620067172C /* 111.png in Resources */,
+				B6D482591E154B5C00BA53F4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6D482621E154B5D00BA53F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6D4826D1E154B5D00BA53F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B6D482471E154B5C00BA53F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B60648FD1E180B6000536C2E /* LeeCATransition3.m in Sources */,
+				B6C50E1E1E1E865200F00CB1 /* LeeDrawView1.m in Sources */,
+				B6D482561E154B5C00BA53F4 /* ViewController.m in Sources */,
+				B6D482831E15522200BA53F4 /* LeeBaseAnimationVC.m in Sources */,
+				B62C01961E1D3DF60032BF64 /* LeeDrawView.m in Sources */,
+				B62D18941E19412F00556B0B /* LeeUIDynamic.m in Sources */,
+				B62D189D1E19569F00556B0B /* LeeBoomBtn.m in Sources */,
+				B6AFB6E21E1A2B920016B4C2 /* loadLayer.m in Sources */,
+				B6AFB6E51E1A387E0016B4C2 /* LeeCATransform3D.m in Sources */,
+				B62D187D1E18A73500556B0B /* LeeCASpringAnimation4.m in Sources */,
+				B6B926AF1E2670800077EA94 /* LeeLayer.m in Sources */,
+				B6D1887C1E1BEEBC0016F7D3 /* LeeUiViewAnimation.m in Sources */,
+				B61E56431E27C50600F5901D /* LeeDrawView2.m in Sources */,
+				B62D18881E192B2100556B0B /* LeeAnimation_1.m in Sources */,
+				B62D18831E18BC5900556B0B /* LeeCATransaction6.m in Sources */,
+				B62D18801E18B28F00556B0B /* LeeCAAnimationGroup5.m in Sources */,
+				B62D189A1E19517600556B0B /* LeeCAReplicatorLayer.m in Sources */,
+				B6AFB6E81E1A44B40016B4C2 /* LeeCGAffineTransform.m in Sources */,
+				B62D188E1E19378000556B0B /* LeeAnimation_2.m in Sources */,
+				B60648FA1E17ECDD00536C2E /* LeeCAKeyframeAnimation2.m in Sources */,
+				B6D482531E154B5C00BA53F4 /* AppDelegate.m in Sources */,
+				B6D482861E15525B00BA53F4 /* LeeAnimation1.m in Sources */,
+				B6D482501E154B5C00BA53F4 /* main.m in Sources */,
+				B62D18911E193EFC00556B0B /* LeeView2.m in Sources */,
+				B62D188B1E192BF600556B0B /* LeeView1.m in Sources */,
+				B62D18971E19516100556B0B /* LeeCAEmitterLayer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6D482601E154B5D00BA53F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6D482691E154B5D00BA53F4 /* LeeAnimationTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6D4826B1E154B5D00BA53F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6D482741E154B5D00BA53F4 /* LeeAnimationUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B6D482661E154B5D00BA53F4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B6D4824A1E154B5C00BA53F4 /* LeeAnimation */;
+			targetProxy = B6D482651E154B5D00BA53F4 /* PBXContainerItemProxy */;
+		};
+		B6D482711E154B5D00BA53F4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B6D4824A1E154B5C00BA53F4 /* LeeAnimation */;
+			targetProxy = B6D482701E154B5D00BA53F4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B6D482571E154B5C00BA53F4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B6D482581E154B5C00BA53F4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B6D4825C1E154B5D00BA53F4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B6D4825D1E154B5D00BA53F4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B6D482761E154B5D00BA53F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B6D482771E154B5D00BA53F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B6D482791E154B5D00BA53F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LeeAnimation/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.LiYang.start.LeeAnimation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B6D4827A1E154B5D00BA53F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LeeAnimation/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.LiYang.start.LeeAnimation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B6D4827C1E154B5D00BA53F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LeeAnimationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.LiYang.start.LeeAnimationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LeeAnimation.app/LeeAnimation";
+			};
+			name = Debug;
+		};
+		B6D4827D1E154B5D00BA53F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LeeAnimationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.LiYang.start.LeeAnimationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LeeAnimation.app/LeeAnimation";
+			};
+			name = Release;
+		};
+		B6D4827F1E154B5D00BA53F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = LeeAnimationUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.LiYang.start.LeeAnimationUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = LeeAnimation;
+			};
+			name = Debug;
+		};
+		B6D482801E154B5D00BA53F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = LeeAnimationUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.LiYang.start.LeeAnimationUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = LeeAnimation;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B6D482461E154B5C00BA53F4 /* Build configuration list for PBXProject "LeeAnimation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6D482761E154B5D00BA53F4 /* Debug */,
+				B6D482771E154B5D00BA53F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B6D482781E154B5D00BA53F4 /* Build configuration list for PBXNativeTarget "LeeAnimation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6D482791E154B5D00BA53F4 /* Debug */,
+				B6D4827A1E154B5D00BA53F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B6D4827B1E154B5D00BA53F4 /* Build configuration list for PBXNativeTarget "LeeAnimationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6D4827C1E154B5D00BA53F4 /* Debug */,
+				B6D4827D1E154B5D00BA53F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B6D4827E1E154B5D00BA53F4 /* Build configuration list for PBXNativeTarget "LeeAnimationUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6D4827F1E154B5D00BA53F4 /* Debug */,
+				B6D482801E154B5D00BA53F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B6D482431E154B5C00BA53F4 /* Project object */;
+}

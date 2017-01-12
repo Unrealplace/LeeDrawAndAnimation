@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<!--
+ ______________ 
+< TUICOOL.COM >
+ -------------- 
+        \   ^__^
+         \  (**)\__$__$__
+            (__)\       )\/\
+             U  ||------|
+                ||     ||
+-->
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="authenticity_token" name="csrf-param">
+<meta content="uxSptovLW3W2OyU0ZsIf82JwA1E/TmmG+o62yE3YmMM=" name="csrf-token">
+    <title>
+            iOS实现自定义绘图的几种方式 - 推酷
+   </title>
+    <meta name="description" content="iOS实现自定义绘图的几种方式">
+  <link rel="shortcut icon" href="http://static0.tuicool.com/favicon.ico" type="image/x-icon">
+  <link href="http://static0.tuicool.com/images/icon114.png" rel="Bookmark">
+  <link rel="apple-touch-icon" sizes="57x57" href="http://static1.tuicool.com/images/icon57.png"> 
+  <link rel="apple-touch-icon" sizes="72x72" href="http://static2.tuicool.com/images/icon72.png">  
+  <link rel="apple-touch-icon" sizes="114x114" href="http://static0.tuicool.com/images/icon114.png">    
+  <link rel="apple-touch-icon" sizes="144x144" href="http://static1.tuicool.com/images/icon144.png">
+  <link href="iOS%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%98%E5%9B%BE%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F%20-%20%E6%8E%A8%E9%85%B7_files/pub.css" rel="stylesheet">
+  <link href="iOS%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%98%E5%9B%BE%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F%20-%20%E6%8E%A8%E9%85%B7_files/application-c710612e44ace622f772ce841b484ea2.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="iOS%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%98%E5%9B%BE%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F%20-%20%E6%8E%A8%E9%85%B7_files/font-awesome.css" rel="stylesheet">
+  <script src="iOS%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%98%E5%9B%BE%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F%20-%20%E6%8E%A8%E9%85%B7_files/ca-pub-7054762349007490.js"></script><script type="text/javascript" src="iOS%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%98%E5%9B%BE%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F%20-%20%E6%8E%A8%E9%85%B7_files/pub.js"></script>
+  <script src="iOS%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%98%E5%9B%BE%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F%20-%20%E6%8E%A8%E9%85%B7_files/application-45891ba46327d27ce11f4da9b0845ceb.js" type="text/javascript"></script>
+    <script type="text/javascript" src="iOS%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%98%E5%9B%BE%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F%20-%20%E6%8E%A8%E9%85%B7_files/tip.js" async=""></script>
+  
+  <script type="text/javascript" src="iOS%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%98%E5%9B%BE%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F%20-%20%E6%8E%A8%E9%85%B7_files/spin.js" async=""></script>
+    <link rel="stylesheet" href="iOS%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%98%E5%9B%BE%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F%20-%20%E6%8E%A8%E9%85%B7_files/highlight.css">
+
+<style type="text/css"></style></head>
+<body class="  pace-done"><div class="pace  pace-inactive"><div class="pace-progress" style="transform: translate3d(100%, 0px, 0px);" data-progress-text="100%" data-progress="99">
+  <div class="pace-progress-inner"></div>
+</div>
+<div class="pace-activity"></div></div>
+  
+  <div id="header" class="navbar-fixed-top">
+    <div class="container">
+      <div class="navbar">
+        <div class="navbar-inner">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> 
+            <span class="icon-bar"></span> 
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span> 
+          </a>
+          <a href="http://www.tuicool.com/" class="brand">推酷</a>        
+        <nav class="nav-collapse collapse">
+            <ul class="nav navbar primary-nav">                            
+              <li class="active">
+                <a href="http://www.tuicool.com/ah">
+                  文章
+                </a>
+              </li>              
+              <li class="">
+                <a href="http://www.tuicool.com/sites/hot">
+                  站点
+                </a>
+              </li>
+              <li class="">
+                <a href="http://www.tuicool.com/topics">
+                  主题
+                </a>
+              </li>
+              <li class="">
+                <a href="http://huodong.tuicool.com/">
+                  活动
+                </a>
+              </li>
+                  <li class="">
+                    <a href="http://course.tuicool.com/">
+                      公开课
+                    </a>
+                  </li>
+              <li class="">
+                <a href="http://www.tuicool.com/mobile">
+                  APP
+                    <sup style="font-size:0.8em;color: #16A085;">荐</sup>
+                </a>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">周刊 <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="http://www.tuicool.com/mags">编程狂人</a></li>
+                  <li><a href="http://www.tuicool.com/mags/design">设计匠艺</a></li> 
+                  <li><a href="http://www.tuicool.com/mags/startup">创业周刊</a></li> 
+                  <li><a href="http://www.tuicool.com/mags/tech">科技周刊</a></li>      
+                  <li><a href="http://www.tuicool.com/mags/guru">Guru Weekly</a></li> 
+                  <li><a href="http://www.tuicool.com/articles/weekly">一周拾遗</a></li>                  
+                </ul>
+              </li>
+              
+              </ul>
+            <form class="navbar-search pull-left" action="http://www.tuicool.com/search">
+              <input class="search-query span2" name="kw" placeholder="搜索" type="text">
+            </form>
+            <ul class="nav pull-right">
+                <li><a href="http://www.tuicool.com/login">登录</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+  </div>   
+</div>
+  <div id="flash_container" class="noPrint">    
+  </div>
+  
+  <div class="container-fluid">  
+      
+<div class="row-fluid article_row_fluid">
+    <div class="span8 contant article_detail_bg">
+        <h1>iOS实现自定义绘图的几种方式</h1>
+        <div class="article_meta">
+            <div style="margin-bottom: 5px;">
+            <span class="timestamp">时间&nbsp;2016-04-25 04:26:24
+            </span>
+            <span class="from">
+                <i class="icon-globe"></i>
+                    <a class="cut cut28 from" href="http://www.tuicool.com/sites/yu2u6vb" target="_blank">Ghui's Blog
+                    </a>
+            </span>
+            </div>
+            <div class="source">
+                <i style="float:left;">原文</i>&nbsp; 
+                <a class="cut cut70" href="http://ghui.me/post/2016/04/ios-draw/?utm_source=tuicool&amp;utm_medium=referral" style="display:inline-block;">http://ghui.me/post/2016/04/ios-draw/</a>
+            </div>
+            <div>
+                <span>主题</span>
+                <a href="http://www.tuicool.com/topics/11350066" target="_blank">
+                    <span class="new-label">UIKit</span>
+                </a>
+            </div>
+        </div>
+        <div class="article_body" id="nei">
+            <div>
+  <p>
+在iOS中实现自定义绘图，需要获得一个    <code>graphics context</code>
+对象，它就是你画图的地方（可以理解为一张画板）。总的来说你有两种方法来获得它:  </p>
+  <h3>1.如何得到一个画板(Context)  </h3>
+  <p>下面详细说一下：</p>
+  <h4>a.自己创建  </h4>
+  <p>
+通过    <code>UIGraphicsBeginImageContextWithOptions</code>
+方法就可以获得一个图形上下文，然后你就可以在其上进行绘图操作，当绘图操作完成以后，可以通过    <code>UIGraphicsGetImageFromCurrentImageContext</code>
+得到一个代表绘制内容的UIImage对象，最后不要忘了调用    <code>UIGraphicsEndImageContext</code>
+关闭此图形上下文。  </p>
+  <p>步骤大概这样:</p>
+  <ol>
+    <li>
+通过      <em>UIGraphicsBeginImageContextWithOptions</em>
+创建context    </li>
+    <li>执行绘制操作(UIBezierPath/Core Graphics)</li>
+    <li>
+通过      <em>UIGraphicsGetImageFromCurrentImageContext</em>
+得到UIImage对象    </li>
+    <li>
+通过      <em>UIGraphicsEndImageContext</em>
+关闭context    </li>
+  </ol>
+  <p>示例代码:  </p>
+  <div>
+    <div>
+      <pre class="prettyprint hljs sql"><span><span>UIGraphicsBeginImageContextWithOptions</span>(<span>CGSizeMake</span>(<span>100</span>, <span>100</span>), <span>false</span>, <span>0</span>)</span><br><span><span>//<span class="hljs-keyword">do</span> <span class="hljs-keyword">some</span> draw ...</span></span><br><span><span>let</span> image = <span>UIGraphicsGetImageFromCurrentImageContext</span>()</span><br><span><span>//<span class="hljs-keyword">to</span> <span class="hljs-keyword">do</span> something <span class="hljs-keyword">with</span> the image <span class="hljs-keyword">object</span>  </span></span><br><span><span>UIGraphicsEndImageContext</span>()</span><br></pre>
+    </div>
+  </div>
+  <h4>b. Cocoa提供  </h4>
+  <ul>
+    <li>
+自定义UIView，重写      <em>drawRect:</em>
+方法，此方法中已由Cocoa设置好了Context    </li>
+    <li>
+自定义UIView，重写      <em>drawLayer:inContext:</em>
+第二个参数就是一个Context    </li>
+  </ul>
+  <p>(以上两种方式任选一种)</p>
+  <p>示例代码:  </p>
+  <div>
+    <div>
+      <pre class="prettyprint hljs swift"><span><span><span><span class="hljs-class"><span class="hljs-keyword">class</span></span></span><span class="hljs-class"> </span><span><span class="hljs-class"><span class="hljs-title">CustomView</span></span></span><span class="hljs-class">: </span><span><span class="hljs-class"><span class="hljs-title">UIView</span></span></span><span class="hljs-class"> </span></span>{</span><br><span></span><br><span>    <span><span class="hljs-keyword">override</span></span> <span><span><span class="hljs-function"><span class="hljs-keyword">func</span></span></span><span class="hljs-function"> </span><span><span class="hljs-function"><span class="hljs-title">drawRect</span></span></span><span><span class="hljs-function"><span class="hljs-params">(rect: CGRect)</span></span></span></span> {</span><br><span>        <span><span class="hljs-comment">//just draw ...</span></span></span><br><span><span class="hljs-comment">    }</span></span><br><span></span><br><span><span class="hljs-comment">    </span><span><span class="hljs-comment">override</span></span><span class="hljs-comment"> </span><span><span><span class="hljs-comment">func</span></span><span class="hljs-comment"> </span><span><span class="hljs-comment">drawLayer</span></span><span><span class="hljs-comment">(layer: CALayer, inContext ctx: CGContext)</span></span></span><span class="hljs-comment"> {</span></span><br><span><span class="hljs-comment">       </span><span><span class="hljs-comment">//draw something whit ctx ...</span></span></span><br><span><span class="hljs-comment">    }</span></span><br><span><span class="hljs-comment">}</span></span><br></pre>
+    </div>
+  </div>
+  <h4>两种方式的对比  </h4>
+  <ol>
+    <li>
+通过      <em>UIGraphicsBeginImageContextWithOptions</em>
+创建的context会被自动设置为当前环境的context，所以这种方式下执行绘图时可以直接使用UIKit的绘图方法，不需要进行额外的操作（UIKit只能基于当前Context绘制）    </li>
+    <li>
+      <em>drawRect</em>
+方法中已自动设置好了context可以直接进行UIKit方式的绘图    </li>
+    <li>
+      <em>drawLayer</em>
+方法中的context,并没有被自动设置为当前环境的context,所以不能直接进行UIKit方式的绘制    </li>
+  </ol>
+  <h3>2. 两种绘图框架  </h3>
+  <div>
+    <p>
+iOS支持两套绘图API:      <code>Core Graphics/QuartZ 2D</code>
+及      <code>OpenGL ES</code>
+. 前者又可以被细分为两种:      <code>UIKit方式</code>
+及      <code>Core Graphics方式</code>
+,其实所谓      <code>UIKit方式</code>
+也是基于      <code>Core Graphics</code>
+的,它只是对      <code>Core Graphics</code>
+的一个面向对象的封装(Core Graphics是一套基于C的面向过程的绘图API).    </p>
+    <p>
+而      <code>OpenGL ES</code>
+是一套跨平台的图形API接口,它只是定义了一套API接口,实现由各个厂商自己做,做iOS的应用开发一般使用不到这种方式,所以这种方式的绘图不在今天的讨论范围.下面详细讨论一下      <code>UIKit</code>
+及      <code>Core Graphics</code>
+方式.    </p>
+  </div>
+  <h4>a. UIKit  </h4>
+  <div>
+    <p>
+这种方式就是对      <code>Core Graphics</code>
+方式的一种简化封装,你可以用面向对象的方式很方便的做各种绘图操作,主要是通过      <code>UIBezierPath</code>
+这个类来实现的,      <code>UIBezierPath</code>
+可以创建基于矢量的路径,例如各种直线,曲线,圆等等    </p>
+    <p>使用这种方式绘图你的代码看上去,大概是这样:</p>
+  </div>
+  <div>
+    <div>
+      <pre class="prettyprint hljs objectivec"><span><span>let</span> p = <span><span class="hljs-built_in">UIBezierPath</span></span>(ovalInRect: <span><span class="hljs-built_in">CGRectMake</span></span>(<span><span class="hljs-number">0</span></span>,<span><span class="hljs-number">0</span></span>, <span><span class="hljs-number">100</span></span>, <span><span class="hljs-number">100</span></span>))</span><br><span><span><span class="hljs-built_in">UIColor</span></span>.blueColor().setFill()</span><br><span>p.fill()</span><br><span><span><span class="hljs-comment">// ...</span></span></span><br></pre>
+    </div>
+  </div>
+  <h4>b. Core Graphics  </h4>
+  <div>
+    <p>
+这种方式使用起来要比      <code>UIKit</code>
+方式复杂一些,它是面向过程的,它的每一个绘图函数都需要传入一个context对象,如果你当前位于UIGraphicsBeginImageContextWithOptions函数或drawRect：方法中，并没有引用一个上下文。为了使用      <code>Core Graphics</code>
+，你可以调用UIGraphicsGetCurrentContext函数获得当前的图形上下文。    </p>
+    <p>使用这种方式绘图你的代码看上去,大概是这样:</p>
+  </div>
+  <div>
+    <div>
+      <pre class="prettyprint hljs objectivec"><span><span>let</span> ctx = <span><span class="hljs-built_in">UIGraphicsGetCurrentContext</span></span>()!</span><br><span><span><span class="hljs-built_in">CGContextAddEllipseInRect</span></span>(ctx, <span><span class="hljs-built_in">CGRectMake</span></span>(<span><span class="hljs-number">0</span></span>, <span><span class="hljs-number">0</span></span>, <span><span class="hljs-number">100</span></span>, <span><span class="hljs-number">100</span></span>))</span><br><span><span><span class="hljs-built_in">CGContextSetFillColorWithColor</span></span>(ctx, <span><span class="hljs-built_in">UIColor</span></span>.blueColor().<span>CGColor</span>)</span><br><span><span><span class="hljs-built_in">CGContextFillPath</span></span>(ctx)</span><br><span><span><span class="hljs-comment">// ...</span></span></span><br></pre>
+    </div>
+  </div>
+  <h4>两种方式的对比  </h4>
+  <ol>
+    <li>
+      <code>UIKit</code>
+也是基于      <code>Core Graphics</code>
+的,是对      <code>Core Graphics</code>
+的一种封装,使用起来更简便,      <code>Core Graphics</code>
+的功能更强大但也更复杂.    </li>
+    <li>
+      <code>UIKit</code>
+只能基于当前Context绘制,可以通过      <code>UIGraphicsGetCurrentContext</code>
+函数获得当前的图形上下文。    </li>
+  </ol>
+  <h3>3. 六种绘图形式  </h3>
+  <p>
+至此，我们有了两大绘图框架的支持以及三种获得图形上下文的方法    <code>(drawRect:、drawRect: inContext:、UIGraphicsBeginImageContextWithOptions)</code>
+。那么我们就有6种绘图的形式:  </p>
+  <p>
+1 . 在UIView的子类方法drawRect：中绘制一个蓝色圆, 使用    <code>UIKit</code>
+方式:  </p>
+  <div>
+    <div>
+      <pre class="prettyprint hljs swift"><span><span><span class="hljs-keyword">override</span></span> <span><span><span class="hljs-function"><span class="hljs-keyword">func</span></span></span><span class="hljs-function"> </span><span><span class="hljs-function"><span class="hljs-title">drawRect</span></span></span><span><span class="hljs-function"><span class="hljs-params">(rect: CGRect)</span></span></span></span> {</span><br><span>        <span><span class="hljs-keyword">let</span></span> p = <span><span class="hljs-type">UIBezierPath</span></span>(ovalInRect: <span><span class="hljs-type">CGRectMake</span></span>(<span><span class="hljs-number">0</span></span>, <span><span class="hljs-number">0</span></span>, <span><span class="hljs-number">100</span></span>, <span><span class="hljs-number">100</span></span>))</span><br><span>        <span><span class="hljs-type">UIColor</span></span>.blueColor().setFill()</span><br><span>        p.fill()</span><br><span>}</span><br></pre>
+    </div>
+  </div>
+  <p>
+2 . 在UIView的子类方法drawRect：中绘制一个蓝色圆, 使用    <code>Core Graphics</code>
+方式:  </p>
+  <div>
+    <div>
+      <pre class="prettyprint hljs vim"><span><span>override</span> <span><span>func</span> <span>drawRect</span><span>(<span class="hljs-keyword">rec</span><span class="hljs-variable">t:</span> CGRect)</span></span> {</span><br><span>	<span><span class="hljs-keyword">let</span></span> <span class="hljs-keyword">con</span> = <span>UIGraphicsGetCurrentContext</span>()!</span><br><span>	<span>CGContextAddEllipseInRect</span>(<span class="hljs-keyword">con</span>, <span>CGRectMake</span>(<span><span class="hljs-number">0</span></span>, <span><span class="hljs-number">0</span></span>, <span><span class="hljs-number">100</span></span>, <span><span class="hljs-number">100</span></span>))</span><br><span>	<span>CGContextSetFillColorWithColor</span>(<span class="hljs-keyword">con</span>, <span>UIColor</span>.blueColor().<span>CGColor</span>)</span><br><span>	<span>CGContextFillPath</span>(<span class="hljs-keyword">con</span>)</span><br><span>}</span><br></pre>
+    </div>
+  </div>
+  <p>
+3 . 在UIView子类的drawLayer:inContext：方法中,使用    <code>UIKit</code>
+方式:  </p>
+  <div>
+    <div>
+      <pre class="prettyprint hljs swift"><span><span><span class="hljs-keyword">override</span></span> <span><span><span class="hljs-function"><span class="hljs-keyword">func</span></span></span><span class="hljs-function"> </span><span><span class="hljs-function"><span class="hljs-title">drawLayer</span></span></span><span><span class="hljs-function"><span class="hljs-params">(layer: CALayer, inContext ctx: CGContext)</span></span></span></span> {</span><br><span>    <span><span class="hljs-type">UIGraphicsPushContext</span></span>(ctx) <span><span class="hljs-comment">//将ctx设置为当前context</span></span></span><br><span><span class="hljs-comment">    </span><span><span class="hljs-comment">let</span></span><span class="hljs-comment"> p = </span><span><span class="hljs-comment">UIBezierPath</span></span><span class="hljs-comment">(ovalInRect: </span><span><span class="hljs-comment">CGRectMake</span></span><span class="hljs-comment">(</span><span><span class="hljs-comment">0</span></span><span class="hljs-comment">, </span><span><span class="hljs-comment">0</span></span><span class="hljs-comment">, </span><span><span class="hljs-comment">100</span></span><span class="hljs-comment">, </span><span><span class="hljs-comment">100</span></span><span class="hljs-comment">))</span></span><br><span><span class="hljs-comment">    </span><span><span class="hljs-comment">UIColor</span></span><span class="hljs-comment">.blueColor().setFill()</span></span><br><span><span class="hljs-comment">    p.fill()</span></span><br><span><span class="hljs-comment">    </span><span><span class="hljs-comment">UIGraphicsPushContext</span></span><span class="hljs-comment">(ctx)</span></span><br><span><span class="hljs-comment">}</span></span><br></pre>
+    </div>
+  </div>
+  <p>
+4 . 在UIView子类的drawLayer:inContext：方法中,使用    <code>Core Graphics</code>
+方式:  </p>
+  <div>
+    <div>
+      <pre class="prettyprint hljs objectivec"><span><span>override</span> <span><span>func</span> <span>drawLayer</span><span>(layer: <span class="hljs-built_in">CALayer</span>, inContext ctx: <span class="hljs-built_in">CGContext</span>)</span></span> {</span><br><span>	<span><span class="hljs-built_in">CGContextAddEllipseInRect</span></span>(ctx, <span><span class="hljs-built_in">CGRectMake</span></span>(<span><span class="hljs-number">0</span></span>, <span><span class="hljs-number">0</span></span>, <span><span class="hljs-number">100</span></span>, <span><span class="hljs-number">100</span></span>))</span><br><span>	<span><span class="hljs-built_in">CGContextSetFillColorWithColor</span></span>(ctx, <span><span class="hljs-built_in">UIColor</span></span>.blueColor().<span>CGColor</span>)</span><br><span>	<span><span class="hljs-built_in">CGContextFillPath</span></span>(ctx)</span><br><span>}</span><br></pre>
+    </div>
+  </div>
+  <p>
+5 . 使用    <code>UIGraphicsBeginImageContextWithOptions</code>
+创建画板&amp;用    <code>UIKit</code>
+方式绘制:  </p>
+  <div>
+    <div>
+      <pre class="prettyprint hljs objectivec"><span><span><span class="hljs-built_in">UIGraphicsBeginImageContextWithOptions</span></span>(<span><span class="hljs-built_in">CGSizeMake</span></span>(<span><span class="hljs-number">100</span></span>, <span><span class="hljs-number">100</span></span>), <span><span class="hljs-literal">false</span></span>, <span><span class="hljs-number">0</span></span>)</span><br><span><span>let</span> p = <span><span class="hljs-built_in">UIBezierPath</span></span>(ovalInRect: <span><span class="hljs-built_in">CGRectMake</span></span>(<span><span class="hljs-number">0</span></span>, <span><span class="hljs-number">0</span></span>, <span><span class="hljs-number">100</span></span>, <span><span class="hljs-number">100</span></span>))</span><br><span><span><span class="hljs-built_in">UIColor</span></span>.blueColor().setFill()</span><br><span>p.fill()</span><br><span><span>let</span> image = <span><span class="hljs-built_in">UIGraphicsGetImageFromCurrentImageContext</span></span>()</span><br><span><span><span class="hljs-built_in">UIGraphicsEndImageContext</span></span>()</span><br><span><span><span class="hljs-comment">//to do something with the image</span></span></span><br></pre>
+    </div>
+  </div>
+  <p>
+6 . 使用    <code>UIGraphicsBeginImageContextWithOptions</code>
+创建画板&amp;用    <code>Core Graphics</code>
+方式绘制:  </p>
+  <div>
+    <div>
+      <pre class="prettyprint hljs lisp"><span><span>UIGraphicsBeginImageContextWithOptions</span>(<span><span class="hljs-name">CGSizeMake</span></span>(<span><span class="hljs-number">100</span></span>, <span><span class="hljs-number">100</span></span>), <span>false</span>, <span><span class="hljs-number">0</span></span>)</span><br><span><span>let</span> con = <span>UIGraphicsGetCurrentContext</span>()</span><br><span><span>CGContextAddEllipseInRect</span>(<span class="hljs-name">con</span>, <span>CGRectMake</span>(<span><span class="hljs-number">0</span></span>, <span><span class="hljs-number">0</span></span>, <span><span class="hljs-number">100</span></span>, <span><span class="hljs-number">100</span></span>))</span><br><span><span>CGContextSetFillColorWithColor</span>(<span class="hljs-name">con</span>, <span>UIColor</span>.redColor().<span>CGColor</span>)</span><br><span><span>CGContextFillPath</span>(<span class="hljs-name">con</span>)</span><br><span><span>let</span> image = <span>UIGraphicsGetImageFromCurrentImageContext</span>()</span><br><span><span>UIGraphicsEndImageContext</span>()</span><br></pre>
+    </div>
+  </div>
+</div>
+
+        </div>
+        <div class="article_social">
+         <div class="article_like">
+    <div class="circle circle-like" id="my_zan" data_id="FBfEnu">  </div>
+
+</div>
+        <div id="share_weixin_image">
+            <img src="iOS%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%98%E5%9B%BE%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F%20-%20%E6%8E%A8%E9%85%B7_files/qrcode.png" height="100px" width="100px">
+        </div>
+<div class="article_share_fav">
+    <div class="share" id="ckepop">
+        <span>分享</span>
+        <button class="share_weibo" id="share_weibo_id" title="分享到新浪微博"></button>
+        <button class="share_qq" id="share_qq_id" title="分享到QQ空间"></button>
+        <button class="share_weixin" id="share_weixin_id"></button>
+    </div>
+    <div class="fav_correct">
+        <button id="my_fav" data_id="FBfEnu">
+            <i class="icon icon-star-empty"></i> <span id="fav_tip">收藏</span>
+        </button>
+        <button id="article-correct" data_id="FBfEnu" uid="0">
+            <i class="icon icon-warning-sign"></i>
+            <span>纠错</span>
+        </button>
+    </div>
+</div>
+<script type="text/javascript">
+$("#share_weibo_id").click( function() {
+   window.open("http://share.baidu.com/s?type=text&searchPic=0&sign=on&to=tsina&url=http://www.tuicool.com/articles/FBfEnu&title=iOS%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%98%E5%9B%BE%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F++%28%E5%88%86%E4%BA%AB%E8%87%AA+%40%E6%8E%A8%E9%85%B7%E7%BD%91%29&key=3113829255");
+});
+$("#share_qq_id").click( function() {
+   window.open("http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://www.tuicool.com/articles/FBfEnu&title=iOS%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%98%E5%9B%BE%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F&desc=&summary=&site=");
+});
+$("#share_weixin_id").click( function() {
+  $("#share_weixin_image").toggle();
+});
+</script>
+
+
+            <div class="bottom_plink huodong-detail-plink-banner clearfix">
+                    <a href="http://submail.cn/sms?s=tuicool" target="_blank"><img src="iOS%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%98%E5%9B%BE%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F%20-%20%E6%8E%A8%E9%85%B7_files/submail700.jpg"></a>
+
+            </div>
+        </div>
+        <div id="site_articles" style="clear:both;">
+              <div class="article-part-title">
+                <span>推荐文章</span>
+              </div>
+          <ul class="side_article_list">
+                <li class="side_article_list_item">
+                    1.<a href="http://www.tuicool.com/articles/rUbiMnY" target="_blank" title="XMNetworking 网络库的设计与使用">
+                    XMNetworking 网络库的设计与使用
+                    </a>
+                </li>
+                <li class="side_article_list_item">
+                    2.<a href="http://www.tuicool.com/articles/EFVfiez" target="_blank" title="聊聊 AOP 模式与 ObjC 对它的实现">
+                    聊聊 AOP 模式与 ObjC 对它的实现
+                    </a>
+                </li>
+                <li class="side_article_list_item">
+                    3.<a href="http://www.tuicool.com/articles/ZzIbaui" target="_blank" title="Objective-C内存管理之所有权修饰符">
+                    Objective-C内存管理之所有权修饰符
+                    </a>
+                </li>
+                <li class="side_article_list_item">
+                    4.<a href="http://www.tuicool.com/articles/Anq2iuq" target="_blank" title="序 相信做iOS开发的小伙伴们经常会遇到这样的页面： 对于这样的静态列表我们可以直接用 storyboard">
+                    序 相信做iOS开发的小伙伴们经常会遇到这样的页面： 对于这样的静态..
+                    </a>
+                </li>
+                <li class="side_article_list_item">
+                    5.<a href="http://www.tuicool.com/articles/26neyqf" target="_blank" title="是时候了解一下 UILayoutGuide 了">
+                    是时候了解一下 UILayoutGuide 了
+                    </a>
+                </li>
+                <li class="side_article_list_item">
+                    6.<a href="http://www.tuicool.com/articles/mequEzQ" target="_blank" title="听说你想撤回信息？">
+                    听说你想撤回信息？
+                    </a>
+                </li>
+          </ul>
+        </div>
+        <div id="kan_articles"></div>
+        <div id="article_weibo" style="display:none;">
+            <div class="article-part-title">
+                <span>相关微博</span>
+                <sub>
+                    <a href="http://www.tuicool.com/articles/weibo_list/FBfEnu" target="_blank">(<i id="weibo_num"></i>)</a> 
+               </sub>
+            </div>
+            <div class="related-weibo-list"></div>
+        </div>
+        <div class="comments">
+    <div class="comments-area">
+    <div class="comments-header">
+        <h5>我来评几句</h5>
+        <div class="alert comment-alert alert-error" style="display:none;">
+            错误
+        </div>
+            <textarea cols="60" rows="5" id="comment-body" placeholder="请输入评论内容..." style="resize: none;"></textarea>
+            <span class="btn btn-medium btn-submit" id="comment-submit">登录后评论</span>
+        <p style="margin-top: 5px;margin-left:10px;">
+            已发表评论数(<span class="comment_cnt">0</span>)
+        </p>
+    </div>
+    <div class="comments-list">
+        <div class="empty-cmts alert alert-success" style="display:none;">
+            没有更多评论了^^
+        </div>
+    </div>
+    <div class="more-comments" style="display:none;">
+        <a href="">更多评论</a>
+    </div>
+    <div class="load-fail" style="display:none;">
+        评论加载失败，<a href="javascript:reload_comments('FBfEnu',1,0,-1);">重新加载</a>
+    </div>
+    </div>
+</div>
+
+    </div>
+        <div class="span4 article_right_side">
+            <div class="right_top">
+    <div class="article_related_site article_detail_bg">
+    <h4 class="article-part-title">相关站点</h4>
+    <div class="article_related_site_body clearfix">
+        <div class="logo">
+            <img src="iOS%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%98%E5%9B%BE%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F%20-%20%E6%8E%A8%E9%85%B7_files/yu2u6vb.png">
+        </div>
+        <div class="name">
+            <div>
+                <a href="http://www.tuicool.com/sites/yu2u6vb" target="_blank"> Ghui's Blog</a>
+            </div>
+            <div>
+                <div class="btn btn-success right_site_follow" id="my_follow" data_id="yu2u6vb">＋订阅</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="right_site_articles" class="article_detail_bg">
+    <div class="article-part-title">
+        <span>热门文章</span>
+    </div>
+    <ul class="side_article_list">
+        <li class="side_article_list_item">
+            1.<a href="http://www.tuicool.com/articles/7RB32mZ" target="_blank" title="iOS 10 本地通知教程"> iOS 10 本地通知教程 </a>
+        </li>
+        <li class="side_article_list_item">
+            2.<a href="http://www.tuicool.com/articles/rUbiMnY" target="_blank" title="XMNetworking 网络库的设计与使用"> XMNetworking 网络库的设计与使用 </a>
+        </li>
+        <li class="side_article_list_item">
+            3.<a href="http://www.tuicool.com/articles/EFVfiez" target="_blank" title="聊聊 AOP 模式与 ObjC 对它的实现"> 聊聊 AOP 模式与 ObjC 对它的实现 </a>
+        </li>
+        <li class="side_article_list_item">
+            4.<a href="http://www.tuicool.com/articles/uYjYBzm" target="_blank" title="iOS当中的Cache设计"> iOS当中的Cache设计 </a>
+        </li>
+        <li class="side_article_list_item">
+            5.<a href="http://www.tuicool.com/articles/26neyqf" target="_blank" title="是时候了解一下 UILayoutGuide 了"> 是时候了解一下 UILayoutGuide 了 </a>
+        </li>
+    </ul>
+</div>
+
+
+      <div class="right-link">
+                <a href="http://submail.cn/sms?s=tuicool" target="_blank"><img src="iOS%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%98%E5%9B%BE%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F%20-%20%E6%8E%A8%E9%85%B7_files/submail120.jpg"></a>
+
+      </div>
+      <div class="right-link" style="margin-top: 5px">
+                <a href="https://sspaas.com/" target="_blank"><img src="iOS%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%98%E5%9B%BE%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F%20-%20%E6%8E%A8%E9%85%B7_files/sspaas320.jpg"></a>
+
+      </div>
+      <div class="right-link" style="margin-top: 5px">
+                <a href="https://zc.pgyer.com/?f=tuicool" target="_blank"><img src="iOS%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%98%E5%9B%BE%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F%20-%20%E6%8E%A8%E9%85%B7_files/pgyer120.jpg"></a>
+
+      </div>
+<div class="right-link" style="margin-top: 5px">
+        <a href="https://www.jiandaoyun.com/?f=tc" target="_blank"><img src="iOS%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%98%E5%9B%BE%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F%20-%20%E6%8E%A8%E9%85%B7_files/jiandaoyun120.jpg"></a>
+
+</div>
+</div>
+<div class="operate_zone" style="position: inherit; top: 0px;">
+      <div class="right-link" style="margin-top: 0px">
+                <a href="http://click.aliyun.com/m/7516/" target="_blank"><img src="iOS%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%98%E5%9B%BE%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F%20-%20%E6%8E%A8%E9%85%B7_files/aliyun120.jpg"></a>
+
+      </div>
+        <div class="frd_pos">
+        <script async="" src="iOS%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%98%E5%9B%BE%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F%20-%20%E6%8E%A8%E9%85%B7_files/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display: inline-block; width: 300px; height: 250px;" data-ad-client="ca-pub-7054762349007490" data-ad-slot="5705695566" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" height="250" frameborder="0" width="300"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+        </div>
+</div>
+         </div>
+</div>
+
+<div>
+   <!-- add_article to kan -->
+<div id="add-article-to-kan" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <span class="add-title">收藏到推刊</span>
+    <a href="#new-kan" class="btn pull-right" data-toggle="modal">创建推刊</a>
+    <i class="clearfix"></i>
+  </div>
+  <div class="modal-body">
+    <ul id="add-kan-list">
+    </ul>
+  </div>
+  <div class="modal-footer">
+    <input value="FBfEnu" class="article-id" type="hidden"> 
+    <button class="btn btn-primary pull-left add-to-btn">  收 藏  </button>
+    <button class="btn" data-dismiss="modal" aria-hidden="true" style="margin-right: 15px">取消</button>
+  </div>
+</div>
+
+   <div id="new-kan" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-body">
+    <input name="name" id="new-kan-name" placeholder="推刊名(必填)" required="" data-validation-required-message="请填写推刊名" type="text">
+    <span class="new-ness-name">请填写推刊名</span>
+    <br>
+    <textarea name="desc" id="desc" rows="6" placeholder="推刊描述"></textarea>
+    <span class="new-ness-desc">描述不能大于100个字符!</span>
+    <br>
+    权限设置：<input name="type" value="1" checked="checked" type="radio"> 公开
+    <input name="type" value="0" type="radio"> 仅自己可见
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary pull-left create-kan-btn" disabled="disabled">创建</button>
+    <button class="btn dismiss-new-kan" data-dismiss="modal" aria-hidden="true">取消</button>
+  </div>
+</div>
+
+
+</div>
+<div id="article-correct-modal" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+            ×
+        </button>
+        <h3>文章纠错</h3>
+    </div>
+    <div class="modal-body">
+        <input value="FBfEnu" id="article-correct-source" type="hidden">
+        <div>
+            <label for="article-correct-email">
+                邮箱地址
+            </label>
+            <input id="article-correct-email" class="input-large" type="email">
+        </div>
+        <div>
+            <label for="article-correct-select">
+                错误类型
+            </label>
+            <select id="article-correct-select">
+                <option value="正文不准确" selected="selected">正文不准确</option>
+                <option value="标题不准确">标题不准确</option>
+                <option value="排版有问题">排版有问题</option>
+                <option value="排版有问题">主题不准确</option>
+                <option value="没有分页内容">没有分页内容</option>
+                <option value="图片无法显示">图片无法显示</option>
+                <option value="视频无法显示">视频无法显示</option>
+                <option value="与原文不一致">与原文不一致</option>
+            </select>
+        </div>
+        <div>
+            <label for="article-correct-other">
+                补充信息
+            </label>
+            <textarea id="article-correct-other" class="span4"></textarea>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary pull-right huodong_correct_submit" id="article-correct-submit">
+            &nbsp;&nbsp;提交&nbsp;&nbsp;
+        </button>
+    </div>
+</div>
+
+<style type="text/css">
+    .btn-large {
+        padding: 0;
+    }
+    .load-fail {
+        display: none;
+    }
+</style>
+<script src="iOS%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%98%E5%9B%BE%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F%20-%20%E6%8E%A8%E9%85%B7_files/highlight.js"></script>
+<script type="text/javascript">
+    $('table').each(function(i) {
+        var size = $(this).children().size();
+        if (size > 1) {
+            $(this).attr('class',"table table-bordered");
+        } else if (size == 1) {
+            var e11 = $(this).children(":first");
+            var e1 = e11[0];
+            var name = e1.nodeName.toLowerCase();
+            if ("tbody" == name) {
+                if (e1.children.length > 1) {
+                    $(this).attr('class',"table table-bordered");
+                } else if (e1.children.length == 1){
+                    var e12 = e1.children[0];
+                    var name2 = e12.nodeName.toLowerCase();
+                    if ("tr" == name2) {
+                       if (e12.children.length > 1) {
+                         $(this).attr('class',"table table-bordered");
+                       }
+                    }
+                }
+            }
+        }
+    });
+        window.page = 0;
+        window.last = 0;    
+        window.first = true;
+        resize_article_image('#nei', 550);
+                load_comments("FBfEnu",1,0,-1);
+                window.uid = -1;
+        open_add_article_to_kan("false");
+        async_do_zan_article();
+        $('pre').each(function(i, e) {
+            hljs.highlightBlock(e, "<span class='indent'>  </span>", false)
+        });
+       
+          
+       handle_follow_site("#my_follow","已订阅","+ 订阅");
+</script>
+
+
+    <div class="loader-inner ball-pulse ball-loading-center" id="page-loading" style="display: none">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="read-later-alert"></div>
+  </div>
+
+        <div class="footer">
+      <div class="footer-inner" style="padding-top: 50px;padding-bottom: 50px">
+        <a href="http://www.tuicool.com/about" target="_blank">关于我们</a>
+        <a href="http://www.tuicool.com/mobile" target="_blank">移动应用</a>
+        <a href="http://www.tuicool.com/bbs/go/issues" target="_blank">意见反馈</a>
+        <a target="_blank" href="http://e.weibo.com/tuicool2012">官方微博</a>
+      </div>
+    </div>
+    <div style="display:none;">
+      <script src="iOS%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%98%E5%9B%BE%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F%20-%20%E6%8E%A8%E9%85%B7_files/stat.php" language="JavaScript"></script><script src="iOS%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%98%E5%9B%BE%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F%20-%20%E6%8E%A8%E9%85%B7_files/core.php" charset="utf-8" type="text/javascript"></script><a href="http://www.cnzz.com/stat/website.php?web_id=5541078" target="_blank" title="站长统计"><img src="iOS%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%98%E5%9B%BE%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F%20-%20%E6%8E%A8%E9%85%B7_files/pic.gif" hspace="0" vspace="0" border="0"></a>
+    </div>
+
+
+
+
+<div class="return" title="返回顶部" style="display: none;"></div></body></html>
