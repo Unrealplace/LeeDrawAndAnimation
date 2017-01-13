@@ -32,7 +32,7 @@
     //[self.view addSubview:view];
     
     
-    LeeDrawView2 * view2 = [[LeeDrawView2 alloc] initWithFrame:CGRectMake(120, 200, 200, 300)];
+    LeeDrawView2 * view2 = [[LeeDrawView2 alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, self.view.bounds.size.height - 100)];
     view2.backgroundColor = [UIColor whiteColor];
     
     [self.view addSubview:view2];

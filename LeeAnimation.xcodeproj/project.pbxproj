@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0411AE391E28A239007E084F /* LeeImageDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0411AE381E28A239007E084F /* LeeImageDrawView.m */; };
 		B60648FA1E17ECDD00536C2E /* LeeCAKeyframeAnimation2.m in Sources */ = {isa = PBXBuildFile; fileRef = B60648F91E17ECDD00536C2E /* LeeCAKeyframeAnimation2.m */; };
 		B60648FD1E180B6000536C2E /* LeeCATransition3.m in Sources */ = {isa = PBXBuildFile; fileRef = B60648FC1E180B6000536C2E /* LeeCATransition3.m */; };
 		B61E56431E27C50600F5901D /* LeeDrawView2.m in Sources */ = {isa = PBXBuildFile; fileRef = B61E56421E27C50600F5901D /* LeeDrawView2.m */; };
@@ -61,6 +62,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0411AE371E28A239007E084F /* LeeImageDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeeImageDrawView.h; sourceTree = "<group>"; };
+		0411AE381E28A239007E084F /* LeeImageDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeeImageDrawView.m; sourceTree = "<group>"; };
+		0411AE3A1E28A266007E084F /* LeeCommonHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeeCommonHeader.h; sourceTree = "<group>"; };
 		B60648F81E17ECDD00536C2E /* LeeCAKeyframeAnimation2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeeCAKeyframeAnimation2.h; sourceTree = "<group>"; };
 		B60648F91E17ECDD00536C2E /* LeeCAKeyframeAnimation2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeeCAKeyframeAnimation2.m; sourceTree = "<group>"; };
 		B60648FB1E180B6000536C2E /* LeeCATransition3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeeCATransition3.h; sourceTree = "<group>"; };
@@ -188,6 +192,8 @@
 				B62C01951E1D3DF60032BF64 /* LeeDrawView.m */,
 				B6C50E1C1E1E865200F00CB1 /* LeeDrawView1.h */,
 				B6C50E1D1E1E865200F00CB1 /* LeeDrawView1.m */,
+				0411AE371E28A239007E084F /* LeeImageDrawView.h */,
+				0411AE381E28A239007E084F /* LeeImageDrawView.m */,
 				B61E56411E27C50600F5901D /* LeeDrawView2.h */,
 				B61E56421E27C50600F5901D /* LeeDrawView2.m */,
 				B6B926AD1E2670800077EA94 /* LeeLayer.h */,
@@ -236,6 +242,7 @@
 			children = (
 				B6D482511E154B5C00BA53F4 /* AppDelegate.h */,
 				B6D482521E154B5C00BA53F4 /* AppDelegate.m */,
+				0411AE3A1E28A266007E084F /* LeeCommonHeader.h */,
 				B6A3FC521E1797620067172C /* 111.png */,
 				B6A3FC541E1797670067172C /* 222.png */,
 				B6A3FC561E1798690067172C /* 屏幕快照 2016-12-31 下午3.40.11.png */,
@@ -347,6 +354,7 @@
 				TargetAttributes = {
 					B6D4824A1E154B5C00BA53F4 = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = Q9SZGQAPK6;
 						ProvisioningStyle = Automatic;
 					};
 					B6D482631E154B5D00BA53F4 = {
@@ -425,6 +433,7 @@
 				B62D189D1E19569F00556B0B /* LeeBoomBtn.m in Sources */,
 				B6AFB6E21E1A2B920016B4C2 /* loadLayer.m in Sources */,
 				B6AFB6E51E1A387E0016B4C2 /* LeeCATransform3D.m in Sources */,
+				0411AE391E28A239007E084F /* LeeImageDrawView.m in Sources */,
 				B62D187D1E18A73500556B0B /* LeeCASpringAnimation4.m in Sources */,
 				B6B926AF1E2670800077EA94 /* LeeLayer.m in Sources */,
 				B6D1887C1E1BEEBC0016F7D3 /* LeeUiViewAnimation.m in Sources */,
@@ -588,7 +597,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Q9SZGQAPK6;
 				INFOPLIST_FILE = LeeAnimation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LiYang.start.LeeAnimation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -599,7 +610,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Q9SZGQAPK6;
 				INFOPLIST_FILE = LeeAnimation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LiYang.start.LeeAnimation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
