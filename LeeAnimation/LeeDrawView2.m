@@ -535,121 +535,122 @@
 
 
 
+
+
+
 //颜色与模板
 //在iOS中，CGColor表示颜色（具体类型为CGColorRef）。使用UIColor的colorWithCGColor：和CGColor方法可bridged cast到UIColor。
 //
 //在iOS中，模板表示为CGPattern（具体类型为CGPatternRef）。你可以创建一个模板并使用它进行描边或填充。其过程是相当复杂的。作为一个非常简单的例子，我将使用红蓝相间的三角形替换箭头的三角形部分。现在移除下面行：
+
 //CGContextSetFillColorWithColor（con， [UIColor redColor].CGColor））；
 
 //8
--(void)drawRect:(CGRect)rect{
-
-        CGContextRef con = UIGraphicsGetCurrentContext();
-    
-        CGContextSaveGState(con);
-    
-        // 在上下文裁剪区域挖一个三角形孔
-    
-        CGContextMoveToPoint(con, 90, 100);
-    
-        CGContextAddLineToPoint(con, 100, 90);
-    
-        CGContextAddLineToPoint(con, 110, 100);
-    
-        CGContextClosePath(con);
-    
-        //获取裁剪区域 CGContextGetClipBoundingBox(con)
-        CGContextAddRect(con, CGContextGetClipBoundingBox(con));
-    
-        CGContextEOClip(con);
-    
-        //    CGContextEOClip(con);// 奇偶规则
-        //    CGContextClip(con);// 环绕规则
-        //    CGContextClipToRect(con, CGRectMake(0, 0, 100, 100));// 范围内可见（可画）
-        //    CGContextClipToMask(con, CGRectMake(0, 0, 100, 100), alphaMask);// 蒙版，范围内 可见（可画）
-    
-    
-    
-        //绘制一个垂线，让它的轮廓形状成为裁剪区域
-    
-        CGContextMoveToPoint(con, 100, 100);
-    
-        CGContextAddLineToPoint(con, 100, 19);
-    
-        CGContextSetLineWidth(con, 20);
-    
-        // 使用路径的描边版本替换图形上下文的路径
-    
-        CGContextReplacePathWithStrokedPath(con);
-    
-        // 对路径的描边版本实施裁剪
-    
-        CGContextClip(con);
-    
-    
-    
-    
-    
-        // 绘制渐变
-    
-        CGFloat locs[3] = { 0.0, 0.5, 1.0 };
-    
-        CGFloat colors[12] = {
-    
-            0.3,0.3,0.3,0.8, // 开始颜色，透明灰
-    
-            0.0,0.0,0.0,1.0, // 中间颜色，黑色
-    
-            0.3,0.3,0.3,0.8 // 末尾颜色，透明灰
-    
-        };
-    
-        CGColorSpaceRef sp = CGColorSpaceCreateDeviceGray();
-    
-        CGGradientRef grad = CGGradientCreateWithColorComponents (sp, colors, locs, 3);
-    
-        CGContextDrawLinearGradient(con, grad, CGPointMake(89,0), CGPointMake(111,0), 0);
-    
-        CGColorSpaceRelease(sp);
-    
-        CGGradientRelease(grad);
-    
-        CGContextRestoreGState(con); // 完成裁剪
-    
-    
-        // 绘制红色箭头
-        
-
-    CGColorSpaceRef sp2 = CGColorSpaceCreatePattern(NULL);
-    
-    CGContextSetFillColorSpace (con, sp2);
-    
-    CGColorSpaceRelease (sp2);
-    
-    CGPatternCallbacks callback = {0, &drawStripes, NULL };
-    
-    CGAffineTransform tr = CGAffineTransformIdentity;
-    
-    CGPatternRef patt = CGPatternCreate(NULL,CGRectMake(0,0,4,4), tr, 4, 4, kCGPatternTilingConstantSpacingMinimalDistortion, true, &callback);
-    
-    CGFloat alph = 1.0;
-    
-    CGContextSetFillPattern(con, patt, &alph);
-    
-    CGPatternRelease(patt);
-    
-    
-        CGContextMoveToPoint(con, 80, 25);
-        
-        CGContextAddLineToPoint(con, 100, 0);
-        
-        CGContextAddLineToPoint(con, 120, 25);
-        
-        CGContextFillPath(con);
-    
-}
-
-
+//-(void)drawRect:(CGRect)rect{
+//
+//        CGContextRef con = UIGraphicsGetCurrentContext();
+//    
+//        CGContextSaveGState(con);
+//    
+//        // 在上下文裁剪区域挖一个三角形孔
+//    
+//        CGContextMoveToPoint(con, 90, 100);
+//    
+//        CGContextAddLineToPoint(con, 100, 90);
+//    
+//        CGContextAddLineToPoint(con, 110, 100);
+//    
+//        CGContextClosePath(con);
+//    
+//        //获取裁剪区域 CGContextGetClipBoundingBox(con)
+//        CGContextAddRect(con, CGContextGetClipBoundingBox(con));
+//    
+//        CGContextEOClip(con);
+//    
+//        //    CGContextEOClip(con);// 奇偶规则
+//        //    CGContextClip(con);// 环绕规则
+//        //    CGContextClipToRect(con, CGRectMake(0, 0, 100, 100));// 范围内可见（可画）
+//        //    CGContextClipToMask(con, CGRectMake(0, 0, 100, 100), alphaMask);// 蒙版，范围内 可见（可画）
+//    
+//    
+//    
+//        //绘制一个垂线，让它的轮廓形状成为裁剪区域
+//    
+//        CGContextMoveToPoint(con, 100, 100);
+//    
+//        CGContextAddLineToPoint(con, 100, 19);
+//    
+//        CGContextSetLineWidth(con, 20);
+//    
+//        // 使用路径的描边版本替换图形上下文的路径
+//    
+//        CGContextReplacePathWithStrokedPath(con);
+//    
+//        // 对路径的描边版本实施裁剪
+//    
+//        CGContextClip(con);
+//    
+//
+//        // 绘制渐变
+//    
+//        CGFloat locs[3] = { 0.0, 0.5, 1.0 };
+//    
+//        CGFloat colors[12] = {
+//    
+//            0.3,0.3,0.3,0.8, // 开始颜色，透明灰
+//    
+//            0.0,0.0,0.0,1.0, // 中间颜色，黑色
+//    
+//            0.3,0.3,0.3,0.8 // 末尾颜色，透明灰
+//    
+//        };
+//    
+//        CGColorSpaceRef sp = CGColorSpaceCreateDeviceGray();
+//    
+//        CGGradientRef grad = CGGradientCreateWithColorComponents (sp, colors, locs, 3);
+//    
+//        CGContextDrawLinearGradient(con, grad, CGPointMake(89,0), CGPointMake(111,0), 0);
+//    
+//        CGColorSpaceRelease(sp);
+//    
+//        CGGradientRelease(grad);
+//    
+//        CGContextRestoreGState(con); // 完成裁剪
+//    
+//    
+//        // 绘制红色箭头
+//        
+//
+//    CGColorSpaceRef sp2 = CGColorSpaceCreatePattern(NULL);
+//    
+//    CGContextSetFillColorSpace (con, sp2);
+//    
+//    CGColorSpaceRelease (sp2);
+//    
+//    CGPatternCallbacks callback = {0, &drawStripes, NULL };
+//    
+//    CGAffineTransform tr = CGAffineTransformIdentity;
+//    
+//    CGPatternRef patt = CGPatternCreate(NULL,CGRectMake(0,0,4,4), tr, 4, 4, kCGPatternTilingConstantSpacingMinimalDistortion, true, &callback);
+//    
+//    CGFloat alph = 1.0;
+//    
+//    CGContextSetFillPattern(con, patt, &alph);
+//    
+//    CGPatternRelease(patt);
+//    
+//    
+//        CGContextMoveToPoint(con, 80, 25);
+//        
+//        CGContextAddLineToPoint(con, 100, 0);
+//        
+//        CGContextAddLineToPoint(con, 120, 25);
+//        
+//        CGContextFillPath(con);
+//    
+//}
+//
+//
 void drawStripes (void *info, CGContextRef con) {
     
     // assume 4 x 4 cell
@@ -663,5 +664,179 @@ void drawStripes (void *info, CGContextRef con) {
     CGContextFillRect(con, CGRectMake(0,0,4,2));
     
 }
+
+
+
+
+
+//图形上下文变换
+//就像UIView可以实现变换，同样图形上下文也具备这项功能。然而对图形上下文应用一个变换操作不会对已在图形上下文上的绘图产生什么影响，它只会影响到在上下文变换之后被绘制的图形，并改变被映射到图形上下文区域的坐标方式。一个图形上下文变换被称为CTM，意为“当前变换矩阵“（current transformation matrix）。
+//
+//完全利用图形上下文的CTM来免于即使是简单的计算操作是很常见的。你可以使用CGContextConcatCTM函数将当前变换乘上任何CGAffineTransform，还有一些便利函数可对当前变换应用平移、缩放，旋转变换。
+//
+//当你获得上下文的时候，对图形上下文的基本变换已经设置好了；这就是系统能映射上下文绘图坐标到屏幕坐标的原因。无论你对当前变换应用了什么变换，基本变换变换依然有效并且绘图继续工作。通过将你的变换代码封装到CGContextSaveGState和CGContextRestoreGState函数调用中，对基本变换应用的变换操作可以被还原。
+//
+//举个例子，对于我们迄今为止使用代码绘制的向上箭头来说，已知的放置箭头的方式仅仅只有一个位置：箭头矩形框的左上角被硬编码在坐标{80，0}。这样代码很难理解、灵活性差、且很难被重用。最明智的做法是通过将所有代码中的x坐标值减去80，让箭头矩形框左上角在坐标{0，0}。事先应用一个简单的平移变换，很容易将箭头画在任何位置。为了映射坐标到箭头的左上角，我们使用下面代码：
+//
+//CGContextTranslateCTM（con, 80, 0）; //在坐标{0,0}处绘制箭头
+//
+//旋转变换特别的有用，它可以让你在一个被旋转的方向上进行绘制而无需使用任何复杂的三角函数。然而这略有点复杂，因为旋转变换围绕的点是原点坐标。这几乎不是你所想要的，所以你先是应用了一个平移变换，为的是映射原点到你真正想绕其旋转的点。但是接着，在旋转之后，为了算出你在哪里绘图，你可能需要做一次逆向平移变换。
+//为了说明这个做法，我将绕箭头杆子尾部旋转多个角度重复绘制箭头，并把对箭头的绘图封装为UIImage对象。接着我们简单重复绘制UIImage对象。
+//具体代码如下：
+
+- (void)drawRect:(CGRect)rect {
+    
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(40,100), NO, 0.0);
+    
+    CGContextRef con = UIGraphicsGetCurrentContext();
+    
+    CGContextSaveGState(con);
+    
+    
+    
+    //绘制三角形镂空区域
+    CGContextMoveToPoint(con, 90 - 80, 100);
+    
+    CGContextAddLineToPoint(con, 100 - 80, 90);
+    
+    CGContextAddLineToPoint(con, 110 - 80, 100);
+    
+    CGContextMoveToPoint(con, 110 - 80, 100);
+    
+    CGContextClosePath(con);
+    
+    
+    
+    
+   //获取裁剪区域 CGContextGetClipBoundingBox(con)
+    CGContextAddRect(con, CGContextGetClipBoundingBox(con));
+    
+    CGContextEOClip(con);
+    
+    
+    
+    
+    
+    
+    //绘制垂直的渐变柱子
+    
+    CGContextMoveToPoint(con, 100 - 80, 100);
+    
+    CGContextAddLineToPoint(con, 100 - 80, 19);
+    
+    CGContextSetLineWidth(con, 20);
+    
+    //窍门是要使用的线描边路径 ( CGContextReplacePathWithStrokedPath ) 然后将其夹 ( CGContextClip ) 要将渐变限制的路径：我理解就是做渐变描边时候用的，俩个方法一起用。
+    
+    
+    CGContextReplacePathWithStrokedPath(con);
+    
+    CGContextClip(con);
+    
+    
+    
+    //绘制渐变
+    CGFloat locs[3] = { 0.0, 0.5, 1.0 };
+    
+    CGFloat colors[12] = {
+        
+        0.3,0.3,0.3,0.8,
+        
+        0.0,0.0,0.0,1.0,
+        
+        0.3,0.3,0.3,0.8
+        
+    };
+    
+    CGColorSpaceRef sp = CGColorSpaceCreateDeviceGray();
+    
+    CGGradientRef grad = CGGradientCreateWithColorComponents (sp, colors, locs, 3);
+    
+    CGContextDrawLinearGradient (con, grad, CGPointMake(89 - 80,0), CGPointMake(111 - 80,0), 0);
+    
+    CGColorSpaceRelease(sp);
+    
+    CGGradientRelease(grad);
+//
+   CGContextRestoreGState(con);
+    
+    
+    
+//    // 这个是绘制上面三角形样式
+    CGColorSpaceRef sp2 = CGColorSpaceCreatePattern(NULL);
+    
+    CGContextSetFillColorSpace (con, sp2);
+    
+    CGColorSpaceRelease (sp2);
+    
+    CGPatternCallbacks callback = {0, &drawStripes, NULL };
+    
+    CGAffineTransform tr = CGAffineTransformIdentity;
+    
+    CGPatternRef patt = CGPatternCreate(NULL,CGRectMake(0,0,4,4),tr,4,4,kCGPatternTilingConstantSpacingMinimalDistortion,true, &callback);
+    
+    CGFloat alph = 1.0;
+    
+    CGContextSetFillPattern(con, patt, &alph);
+    
+    CGPatternRelease(patt);
+    
+    CGContextMoveToPoint(con, 80 - 80, 25);
+    
+    CGContextAddLineToPoint(con, 100 - 80, 0);
+    
+    CGContextAddLineToPoint(con, 120 - 80, 25);
+    
+    CGContextFillPath(con);
+    
+    
+    
+
+    
+    UIImage* im = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    con = UIGraphicsGetCurrentContext();
+    
+    [im drawAtPoint:CGPointMake(0,0)];
+    
+    
+    for (int i=0; i<3; i++) {
+        
+        CGContextTranslateCTM(con, 20, 100);
+        
+        CGContextRotateCTM(con, 30 * M_PI/180.0);
+        
+        CGContextTranslateCTM(con, -20, -100);
+        
+        [im drawAtPoint:CGPointMake(0,0)];
+        
+    }
+    
+}
+
+
+//变换有多个方法解决我们早期使用CGContextDrawImage函数遇到的倒置问题。相对于逆向绘图，我们选择逆向我们绘图的上下文。实质上，我们对上下文坐标系统应用了一个“倒置”变换。你自上而下移动上下文，接着你通过应用一个让y坐标乘以-1的缩放变换逆向y坐标的方向。
+//
+//CGContextTranslateCTM(con, 0, theHeight);
+//
+//CGContextScaleCTM(con, 1.0, -1.0);
+//
+//上下文的顶部应该被你往下移动多远依赖于你绘制的图片。比如说我们可以绘制没有倒置问题的两个半边的火星图形（前面讨论的一个例子）。
+//
+//CGContextTranslateCTM(con, 0, sz.height); // sz为[mars size]
+//
+//CGContextScaleCTM(con, 1.0, -1.0);
+//
+//CGContextDrawImage(con, CGRectMake(0, 0, sz.width/2.0, sz.height), marsLeft);
+//
+//CGContextDrawImage(con, CGRectMake(b.size.width-sz.width/2.0, 0, sz.width/2.0, sz.height),marsRight);
+
+
+
+
+
+
 
 @end

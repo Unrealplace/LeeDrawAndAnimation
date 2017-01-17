@@ -1,0 +1,1175 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+     
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    
+<head>  
+
+    <script type="text/javascript" src="http://c.csdnimg.cn/pubfooter/js/tracking.js" charset="utf-8"></script>  
+
+    <script type="text/javascript">
+        var protocol = window.location.protocol;
+        document.write('<script type="text/javascript" src="' + protocol + '//csdnimg.cn/pubfooter/js/repoAddr2.js?v=' + Math.random() + '"></' + 'script>');
+    </script>
+
+  
+ <meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
+
+    <title>CGContextRef详解 - wangbo1981814的专栏
+        - 博客频道 - CSDN.NET</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="今天反馈过来一个BUG说一个页面的功能" />
+    <script src="http://static.blog.csdn.net/scripts/jquery.js" type="text/javascript"></script>
+      <script type="text/javascript" src="http://static.blog.csdn.net/scripts/jquery-version.js"></script>
+    <script type="text/javascript" src="http://static.blog.csdn.net/scripts/ad.js?v=1.1"></script>
+        <!--new top-->
+               <link rel="stylesheet" href="http://c.csdnimg.cn/public/common/toolbar/css/index.css">        <!--new top-->
+    
+      <!-- ad begin -->
+         <script language="javascript" type="text/javascript" src="http://ads.csdn.net/js/tracking.js"></script>
+    <!-- ad end-->
+
+    <link rel="Stylesheet" type="text/css" href="http://static.blog.csdn.net/skin/default/css/style.css?v=1.1" />
+    <link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate" href="/wangbo1981814/rss/list" />
+    <link rel="shortcut icon" href="http://c.csdnimg.cn/public/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="http://static.blog.csdn.net/scripts/SyntaxHighlighter/styles/default.css" />
+ 
+
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?6bcd52f51e9b3dce32bec4a3997715ac";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+</head>
+<body>
+
+
+    <!-- 广告位开始 -->
+        <ins data-revive-zoneid="149" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57"></ins>
+    <!-- 广告位结束 -->
+
+    
+   
+      <!--new top-->
+    <script id="toolbar-tpl-scriptId" fixed="true" prod="blog" skin="black" src="http://c.csdnimg.cn/public/common/toolbar/js/html.js" type="text/javascript"></script>
+     <!--new top-->
+    <div id="container">
+        <div id="header">
+    <div class="header">
+        <div id="blog_title">
+            <h2>
+                <a href="http://blog.csdn.net/wangbo1981814">wangbo1981814的专栏</a></h2>
+            <h3></h3>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+        
+     
+    </div>
+</div>
+<div id="navigator">
+    <div class="navigator_bg">
+    </div>
+    <div class="navigator">
+        <ul>           
+                <li id="btnContents"><a href="http://blog.csdn.net/wangbo1981814?viewmode=contents"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_mulu'])">
+                    <img src="http://static.blog.csdn.net/images/ico_list.gif">目录视图</span></a></li>
+                <li id="btnView"><a href="http://blog.csdn.net/wangbo1981814?viewmode=list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_zhaiyao'])">
+                    <img src="http://static.blog.csdn.net/images/ico_summary.gif">摘要视图</span></a></li>
+                <li id="btnRss"><a href="http://blog.csdn.net/wangbo1981814/rss/list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_RSS'])">
+                    <img src="http://static.blog.csdn.net/images/ico_rss.gif">订阅</span></a></li>                
+            
+
+            </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    var username = "wangbo1981814";
+    var _blogger = username;
+    var blog_address = "http://blog.csdn.net/wangbo1981814";
+    var static_host = "http://static.blog.csdn.net";
+    var currentUserName = "";  
+</script>
+
+        <div id="body">
+            <div id="main">
+                <div class="main">
+                        <div class="ad_class">
+<div class="notice tracking-ad" data-mod='popu_3' > 
+
+
+<a href="http://blog.csdn.net/blogdevteam/article/details/53636007
+">
+<font color=blue>【获奖公布】“我的2016”主题征文活动 
+
+
+</font></a>
+
+&nbsp;&nbsp;&nbsp;&nbsp
+
+<a href="http://bss.csdn.net/m/topic/edu_develop
+">
+<font color=red>程序猿全指南，让【移动开发】更简单！ 
+</font></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="http://blog.csdn.net/PK.html">
+<font color=blue>【观点】移动原生App开发和HTML 5开发，你更看好哪个？
+</font></a>
+
+&nbsp;&nbsp;&nbsp;
+
+<a href="http://blog.csdn.net/baiyuzhong2012/article/details/54098338">
+<font color=red>博客的神秘功能
+</font></a>
+
+
+</div>                        </div>
+                        
+
+
+
+  
+<link href="http://static.blog.csdn.net/css/comment1.css" type="text/css" rel="stylesheet" />
+<link href="http://static.blog.csdn.net/css/style1.css" type="text/css" rel="stylesheet" />
+<script language='JavaScript' type='text/javascript' src='http://download.csdn.net/js/jquery.cookie.js'></script>
+<script type="text/javascript" src="http://c.csdnimg.cn/rabbit/search-service/main.js"></script>
+<link rel="stylesheet" href="http://static.blog.csdn.net/public/res-min/markdown_views.css?v=1.0" />
+<link rel="stylesheet" href="http://static.blog.csdn.net/css/category.css?v=1.0" />
+<script type="text/javascript" src="http://static.blog.csdn.net/public/res/bower-libs/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/web-storage-cache.min.js"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/replace.min.js"></script>
+
+
+
+
+  <script type="text/ecmascript">
+      window.quickReplyflag = true;
+           
+            var isBole = false;
+            
+      
+      var fasrc="http://my.csdn.net/my/favorite/miniadd?t=CGContextRef%e8%af%a6%e8%a7%a3&u=http://blog.csdn.net/wangbo1981814/article/details/37651991"
+
+    </script>
+<div id="article_details" class="details">
+    <div class="article_title">   
+         <span class="ico ico_type_Repost"></span>
+
+
+    <h1>
+        <span class="link_title"><a href="/wangbo1981814/article/details/37651991">
+        CGContextRef详解            
+        </a></span>
+    </h1>
+</div>
+
+   
+
+        <div class="article_manage clearfix">
+        <div class="article_r">
+            <span class="link_postdate">2014-07-10 11:13</span>
+            <span class="link_view" title="阅读次数">4747人阅读</span>
+            <span class="link_comments" title="评论次数"> <a href="#comments" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_pinglun'])">评论</a>(0)</span>
+            <span class="link_collect tracking-ad" data-mod="popu_171"> <a href="javascript:void(0);" onclick="javascript:collectArticle('CGContextRef%e8%af%a6%e8%a7%a3','37651991');return false;" title="收藏">收藏</a></span>
+             <span class="link_report"> <a href="#report" onclick="javascript:report(37651991,2);return false;" title="举报">举报</a></span>
+
+        </div>
+    </div>
+    <div class="embody"  style="display:none" id="embody">
+        <span class="embody_t">本文章已收录于：</span>
+        <div class="embody_c" id="lib" value="{&quot;err&quot;:0,&quot;msg&quot;:&quot;ok&quot;,&quot;data&quot;:[]}"></div>
+    </div>
+    <style type="text/css">        
+            .embody{
+                padding:10px 10px 10px;
+                margin:0 -20px;
+                border-bottom:solid 1px #ededed;                
+            }
+            .embody_b{
+                margin:0 ;
+                padding:10px 0;
+            }
+            .embody .embody_t,.embody .embody_c{
+                display: inline-block;
+                margin-right:10px;
+            }
+            .embody_t{
+                font-size: 12px;
+                color:#999;
+            }
+            .embody_c{
+                font-size: 12px;
+            }
+            .embody_c img,.embody_c em{
+                display: inline-block;
+                vertical-align: middle;               
+            }
+             .embody_c img{               
+                width:30px;
+                height:30px;
+            }
+            .embody_c em{
+                margin: 0 20px 0 10px;
+                color:#333;
+                font-style: normal;
+            }
+    </style>
+    <script  type="text/javascript">
+        $(function () {
+            try
+            {
+                var lib = eval("("+$("#lib").attr("value")+")");
+                var html = "";
+                if (lib.err == 0) {
+                    $.each(lib.data, function (i) {
+                        var obj = lib.data[i];
+                        //html += '<img src="' + obj.logo + '"/>' + obj.name + "&nbsp;&nbsp;";
+                        html += ' <a href="' + obj.url + '" target="_blank">';
+                        html += ' <img src="' + obj.logo + '">';
+                        html += ' <em><b>' + obj.name + '</b></em>';
+                        html += ' </a>';
+                    });
+                    if (html != "") {
+                        setTimeout(function () {
+                            $("#lib").html(html);                      
+                            $("#embody").show();
+                        }, 100);
+                    }
+                }      
+            } catch (err)
+            { }
+            
+        });
+    </script>
+      <div class="category clearfix">
+        <div class="category_l">
+           <img src="http://static.blog.csdn.net/images/category_icon.jpg">
+            <span>分类：</span>
+        </div>
+        <div class="category_r">
+                    <label  onclick="GetCategoryArticles('2387525','wangbo1981814','top','37651991');">
+                        <span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_fenlei']);">ios<em>（1）</em></span>
+                      <img class="arrow-down" src="http://static.blog.csdn.net/images/arrow_triangle _down.jpg" style="display:inline;">
+                      <img class="arrow-up" src="http://static.blog.csdn.net/images/arrow_triangle_up.jpg" style="display:none;">
+                        <div class="subItem">
+                            <div class="subItem_t"><a  href="http://blog.csdn.net/wangbo1981814/article/category/2387525"  target="_blank">作者同类文章</a><i class="J_close">X</i></div>
+                            <ul class="subItem_l" id="top_2387525">                            
+                            </ul>
+                        </div>
+                    </label>                    
+        </div>
+    </div>
+    <script   type="text/javascript" src="http://static.blog.csdn.net/scripts/category.js"></script>  
+
+  
+
+  
+  
+     
+
+<div id="article_content" class="article_content">
+
+<h1 style="font-size:14px; margin:0px 0px 10px; font-family:Verdana">CGContextRef详解</h1>
+<span style="font-family:Verdana; font-size:13px">Graphics Context是图形上下文,可以将其理解为一块画布,我们可以在上面进行绘画操作,绘制完成后,将画布放到我们的view中显示即可,view看作是一个画框.</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">Quartz提供了以下几种类型的Graphics Context：</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">Bitmap Graphics Context</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">PDF Graphics Context</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">Window Graphics Context</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">Layer Context</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">Post Graphics Context</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">先熟悉下CGContextRef</span><br style="font-family:Verdana; font-size:13px">
+<br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">Functions by Task--按接口功能分</span><br style="font-family:Verdana; font-size:13px">
+<br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">1、Managing Graphics Contexts--管理图形上下文</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextFlush&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 强制所有挂起的绘图操作在一个窗口上下文中立即被渲染到目标设备。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextGetTypeID&nbsp;&nbsp; 返回Quartz图形上下文的类型标识符。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextRelease&nbsp;&nbsp;&nbsp;&nbsp; 图形上下文的引用计数-1。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextRetain&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;图形上下文的引用计数&#43;1。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSynchronize 将一个窗口的图像上下文内容更新，即所有的绘图操作都会在下次同步到窗口上</span><br style="font-family:Verdana; font-size:13px">
+<br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">2、Saving and Restoring the Current Graphics State--保存和恢复当前图形状态</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSaveGState 将当前图形状态的副本PUSH到图形状态栈中；</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">&nbsp;&nbsp;每个图形上下文维护一个保存图形状态的堆栈。需要注意的是，注意,当前绘图环境的所有方面都是图形状态的元素。比如当前路径的图像状态是不考虑的，所以当调用这</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">个函数的时候是不保存的。保存的图像状态如下：</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">&nbsp;&nbsp;CTM (current transformation matrix)</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">&nbsp;&nbsp;clip region</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">&nbsp;&nbsp;image interpolation quality</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">&nbsp;&nbsp;line width</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">&nbsp;&nbsp;line join</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">&nbsp;&nbsp;miter limit</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">&nbsp;&nbsp;line cap</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">&nbsp;&nbsp;line dash</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">&nbsp;&nbsp;flatness</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">&nbsp;&nbsp;should anti-alias</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">&nbsp;&nbsp;rendering intent</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">&nbsp;&nbsp;fill color space</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">&nbsp;&nbsp;stroke color space</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">&nbsp;&nbsp;fill color</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">&nbsp;&nbsp;stroke color</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">&nbsp;&nbsp;alpha value</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">&nbsp;&nbsp;font</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">&nbsp;&nbsp;font size</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">&nbsp;&nbsp;character spacing</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">&nbsp;&nbsp;text drawing mode</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">&nbsp;&nbsp;shadow parameters</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">&nbsp;&nbsp;the pattern phase</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">&nbsp;&nbsp;the font smoothing parameter</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">&nbsp;&nbsp;blend mode</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextRestoreGState 将当前图形状态设置为最近一次保存的状态，即恢复状态。</span><br style="font-family:Verdana; font-size:13px">
+<br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">3、Getting and Setting Graphics State Parameters--获取和设置图形状态参数</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextGetInterpolationQuality&nbsp;&nbsp;返回当前的图形上下文的插&#20540;（插&#20540;(Interpolation)是在不天生像素的环境下增长图像像素大小的一种方法,在周围像素色彩</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">的根蒂根基上用算术公式计算亡失像素的色彩。）质量水平。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetFlatness&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;设置弯曲的路径中的图形上下文的准确性。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetInterpolationQuality&nbsp;&nbsp;设置图形上下文的插&#20540;质量水平。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetLineCap&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 图形环境中的画线的端点的样式设置。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetLineDash&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;设置图形上下文中的虚线的模式。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetLineJoin&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;设置图像上下文中的接接线的样式。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetLineWidth&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 设置图像上下文中的线的宽度。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetMiterLimit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;设置图像上下文中的连接线的斜接限制。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetPatternPhase&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;设置一个上下文的段落模式。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetFillPattern&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在指定的图形上下文设置的填充图案模式。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetRenderingIntent&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在当前图形状态设置渲染意向。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetShouldAntialias&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 设置图形上下文的抗锯齿开启或关闭。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetStrokePattern&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在指定的图形上下文设置描边图案。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetBlendMode</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetAllowsAntialiasing</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetAllowsFontSmoothing</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetShouldSmoothFonts</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetAllowsFontSubpixelPositioning</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetShouldSubpixelPositionFonts</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetAllowsFontSubpixelQuantization</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetShouldSubpixelQuantizeFonts</span><br style="font-family:Verdana; font-size:13px">
+<br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">4、Constructing Paths--构建路径</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">These functions are used to define the geometry of the current path. For more information on how paths are defined, see CGPath Reference.</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">这些函数是用来定义路径的几何形状。对于如何定义的路径的更多信息，请参阅CGPath参考。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextAddArc</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextAddArcToPoint</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextAddCurveToPoint</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextAddLines</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextAddLineToPoint</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextAddPath</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextCopyPath</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextAddQuadCurveToPoint</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextAddRect</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextAddRects</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextBeginPath</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextClosePath</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextMoveToPoint</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextAddEllipseInRect</span><br style="font-family:Verdana; font-size:13px">
+<br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">5、Painting Paths--绘画路径</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">These functions are used to stroke along or fill in the current path.</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">这些功能是用于边缘或填充在当前路径。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextClearRect</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextDrawPath</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextEOFillPath</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextFillPath</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextFillRect</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextFillRects</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextFillEllipseInRect</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextStrokePath</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextStrokeRect</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextStrokeRectWithWidth</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextReplacePathWithStrokedPath</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextStrokeEllipseInRect</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextStrokeLineSegments</span><br style="font-family:Verdana; font-size:13px">
+<br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">6、Getting Information About Paths--获取关于路径的信息</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextIsPathEmpty&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;表示目前的路径是否包含任何的子路径。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextGetPathCurrentPoint&nbsp;&nbsp;&nbsp;&nbsp;返回一个非空的路径中的当前点。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextGetPathBoundingBox&nbsp;&nbsp;&nbsp;&nbsp; 返回包含当前路径的最小矩形。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextPathContainsPoint&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;检查当前路径中是否包含指定的点。</span><br style="font-family:Verdana; font-size:13px">
+<br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">7、Modifying Clipping Paths--修改剪贴路径</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextClip&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 修改当前剪贴路径，使用非零绕数规则。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextEOClip&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 修改当前剪贴路径，使用奇偶规则。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextClipToRect</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextClipToRects</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextGetClipBoundingBox</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextClipToMask</span><br style="font-family:Verdana; font-size:13px">
+<br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">8、Setting Color, Color Space, and Shadow Values--设置颜色，色彩空间和阴影&#20540;</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetAlpha</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetCMYKFillColor</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetFillColor</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetCMYKStrokeColor</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetFillColorSpace</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetFillColorWithColor</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetGrayFillColor</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetGrayStrokeColor</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetRGBFillColor</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetRGBStrokeColor</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetShadow</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetShadowWithColor</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetStrokeColor</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetStrokeColorSpace</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetStrokeColorWithColor</span><br style="font-family:Verdana; font-size:13px">
+<br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">9、Transforming User Space--转换用户空间</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">These functions allow you to examine and change the current transformation matrix (CTM) in a graphics context.</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">这些功能允许你检查和更改图形上下文的当前转换矩阵（CTM）。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextConcatCTM</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextGetCTM</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextRotateCTM</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextScaleCTM</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextTranslateCTM</span><br style="font-family:Verdana; font-size:13px">
+<br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">10、Using Transparency Layers--使用透明图层</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextBeginTransparencyLayer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;开始一个透明层。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">&nbsp;&nbsp;直到相应的调用CGContextEndTransparencyLayer，在指定范围内的所有后续绘制操作组合到一个完全透明的背景（它被视为一个单独的目标缓冲区从上下文）。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">调用CGContextEndTransparencyLayer，使用全局alpha和阴影的上下文状态合成到上下文中。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextBeginTransparencyLayerWithRect&nbsp;&nbsp;开始透明度层，它的边界是指定的矩形，其内容是有界的。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextEndTransparencyLayer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;结束一个透明层。</span><br style="font-family:Verdana; font-size:13px">
+<br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">11、Drawing an Image to a Graphics Context--绘制图像图形上下文</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextDrawTiledImage 重复绘制的图像，扩展到提供的矩形，填补当前剪辑区域。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextDrawImage&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;绘制图像到图形上下文中。</span><br style="font-family:Verdana; font-size:13px">
+<br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">12、Drawing PDF Content to a Graphics Context--绘制一个图形上下文的PDF内容</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextDrawPDFPage&nbsp;&nbsp;&nbsp;&nbsp;绘制一个PDF页面到当前的用户空间。</span><br style="font-family:Verdana; font-size:13px">
+<br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">13、Drawing With a Gradient--制图渐变</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextDrawLinearGradient&nbsp;&nbsp;绘制一个渐变填充定义的出发点和落脚点沿线变化。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextDrawRadialGradient&nbsp;&nbsp;绘制一个沿着由所提供的开始和结束的圆限定的区域变化的渐变填充。</span><br style="font-family:Verdana; font-size:13px">
+<br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">14、Drawing With a Shading--制图底纹</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextDrawShading&nbsp;&nbsp;使用指定的阴影的背景，填充剪切路径。</span><br style="font-family:Verdana; font-size:13px">
+<br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">15、Setting Up a Page-Based Graphics Context--建立一个基于页面的图形上下文</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextBeginPage&nbsp;&nbsp;&nbsp;&nbsp;基于页面的图形上下文中开始了新的一页。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextEndPage&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在基于页面的图形上下文结束当前的页面。</span><br style="font-family:Verdana; font-size:13px">
+<br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">16、Drawing Glyphs--绘制字形</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextShowGlyphs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在当前文本位置显示一个数组的字形。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextShowGlyphsAtPoint&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在指定的位置显示一个数组的字形。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextShowGlyphsWithAdvances 绘制具有不同的偏移量的一个数组字形。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextShowGlyphsAtPositions&nbsp;&nbsp;在所提供的位置绘制字形。</span><br style="font-family:Verdana; font-size:13px">
+<br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">17、Drawing Text--绘制文本</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextGetTextMatrix&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;返回当前文本矩阵。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextGetTextPosition&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;返回在绘制文本的位置。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSelectFont&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 设置在一个图形上下文的字体和字体大小。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetCharacterSpacing&nbsp;&nbsp;设置当前字符间距。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetFont&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;设置上下文的字体。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetFontSize&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;设置上下文的字体大小。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetTextDrawingMode&nbsp;&nbsp; 设置当前文本的绘图模式。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetTextMatrix&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;设置当前文本矩阵。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetTextPosition&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;设置要绘制文本的位置。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextShowText&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在当前文本位置，由目前的文本矩阵指定的点显示一个字符数组。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextShowTextAtPoint&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在指定的位置显示一个字符串。</span><br style="font-family:Verdana; font-size:13px">
+<br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">18、Converting Between Device Space and User Space--设备空间和用户空间之间的转换</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextGetUserSpaceToDeviceSpaceTransform</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextConvertPointToDeviceSpace</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextConvertPointToUserSpace</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextConvertSizeToDeviceSpace</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextConvertSizeToUserSpace</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextConvertRectToDeviceSpace</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextConvertRectToUserSpace</span><br style="font-family:Verdana; font-size:13px">
+<br style="font-family:Verdana; font-size:13px">
+<br style="font-family:Verdana; font-size:13px">
+<br style="font-family:Verdana; font-size:13px">
+<br style="font-family:Verdana; font-size:13px">
+<br style="font-family:Verdana; font-size:13px">
+<br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextRef用法</span><br style="font-family:Verdana; font-size:13px">
+<br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">1、简介Quartz。</span><br style="font-family:Verdana; font-size:13px">
+<br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">Quartz 是主要的描画接口，支持基于路径的描画、抗锯齿渲染、渐变填充模式、图像、颜色、坐标空间变换、以及PDF 文档的创建、显示、和分析。UIKit 为Quartz 的图像和颜色操作提供了Objective-C 的封装。Core Animation 为很多UIKit 的视图属性声明的动画效果提供底层支持，也可以用于实现定制的动画。</span><br style="font-family:Verdana; font-size:13px">
+<br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">在调用您提供的drawRect:方法之前，视图对象会自动配置其描画环境，使您的代码可以立即进行描画。作为这些配置的一部分，UIView 对象会为当前描画环境创建一个图形上下文（对应于CGContextRef 封装类型）</span><br style="font-family:Verdana; font-size:13px">
+<br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">用户坐标空间是您发出的所有描画命令的工作环境。该空间的单位由点来表示。设备坐标空间指的是设备内在的坐标空间，由像素来表示。缺省情况下，用户坐标空间上的一个点等于设备坐标空间的一个像素，这意味着一个点等于1/160英寸。然而，您不应该假定这个比例总是1:1。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">UIColor 对象提供了一些便利方法，用于通过RGB、HSB、和灰度&#20540;指定颜色&#20540;。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">您也可以使用Core Graphics 框架中的CGContextSetRGBStrokeColor 和CGContextSetRGBFillColor 函数来创建和设置颜色。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">路径轮廓可以用像CGContextStrokePath 这样的函数来画，即用当前的笔划颜色画出以路径为中心位置的线。路径的填充则可以用CGContextFillPath 函数来实现，它的功能是用当前的填充颜色或样式填充路径线段包围的区域。</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">获取上下文，图形上下文是什么意思？</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextRef context = UIGraphicsGetCurrentContext();</span><br style="font-family:Verdana; font-size:13px">
+<br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">2、简单的示例代码</span><br style="font-family:Verdana; font-size:13px">
+<br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">[cpp] view plaincopy</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">// 画一个正方形图形 没有边框&nbsp;&nbsp;</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetRGBFillColor(context, 0, 0.25, 0, 0.5);&nbsp;&nbsp;</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextFillRect(context, CGRectMake(2, 2, 270, 270));&nbsp;&nbsp;</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextStrokePath(context);&nbsp;&nbsp;</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">&nbsp;&nbsp;</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">// 写文字&nbsp;&nbsp;</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetLineWidth(context, 1.0);&nbsp;&nbsp;</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetRGBFillColor (context,&nbsp;&nbsp;1, 1, 1, 1.0);&nbsp;&nbsp;</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">UIFont&nbsp;&nbsp;*font = [UIFont boldSystemFontOfSize:11.0];&nbsp;&nbsp;</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">[@&quot;fangyp&quot; drawInRect:CGRectMake(40, 40, 80, 20) withFont:font];&nbsp;&nbsp;</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">&nbsp;&nbsp;</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">// 画一条线&nbsp;&nbsp;</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetRGBStrokeColor(context, 0.5, 0.5, 0.5, 0.5);//线条颜色&nbsp;&nbsp;</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextMoveToPoint(context, 20, 20);&nbsp;&nbsp;</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextAddLineToPoint(context, 200,20);&nbsp;&nbsp;</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextStrokePath(context);&nbsp;&nbsp;</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">&nbsp;&nbsp;</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">// 画正方形边框&nbsp;&nbsp;</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetRGBStrokeColor(context, 1, 1.0, 1.0, 1.0);&nbsp;&nbsp;</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetLineWidth(context, 2.0);&nbsp;&nbsp;</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextAddRect(context, CGRectMake(2, 2, 270, 270));&nbsp;&nbsp;</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextStrokePath(context);&nbsp;&nbsp;</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">&nbsp;&nbsp;</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">// 画方形背景颜色&nbsp;&nbsp;</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextTranslateCTM(ctx, 0.0f, self.view.bounds.size.height);&nbsp;&nbsp;</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextScaleCTM(ctx, 1.0f, -1.0f);&nbsp;&nbsp;</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">UIGraphicsPushContext(ctx);&nbsp;&nbsp;</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetLineWidth(ctx,320);&nbsp;&nbsp;</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextSetRGBStrokeColor(ctx, 250.0/255, 250.0/255, 210.0/255, 1.0);&nbsp;&nbsp;</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">CGContextStrokeRect(ctx, CGRectMake(0, 0, 320, 460));&nbsp;&nbsp;</span><br style="font-family:Verdana; font-size:13px">
+<span style="font-family:Verdana; font-size:13px">UIGraphicsPopContext(); &nbsp;</span>
+   
+</div>
+
+
+
+
+<!-- Baidu Button BEGIN -->
+
+
+
+
+<div class="bdsharebuttonbox tracking-ad" style="float: right;" data-mod="popu_172">
+<a href="#" class="bds_more" data-cmd="more" style="background-position:0 0 !important; background-image: url(http://bdimg.share.baidu.com/static/api/img/share/icons_0_16.png?v=d754dcc0.png) !important"></a>
+<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"  style="background-position:0 -52px !important"></a>
+<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"style="background-position:0 -104px !important"></a>
+<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"style="background-position:0 -260px !important"></a>
+<a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"style="background-position:0 -208px !important"></a>
+<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"style="background-position:0 -1612px !important" ></a>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+<!-- Baidu Button END -->
+
+   <link rel="stylesheet" href="http://static.blog.csdn.net/css/blog_detail.css" />
+
+    
+<!--172.16.140.12-->
+
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=1536434" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->
+
+ 
+
+
+        <div id="digg" ArticleId="37651991" >
+            <dl id="btnDigg" class="digg digg_disable"  onclick="btndigga();">
+               
+                 <dt>顶</dt>
+                <dd>0</dd>
+            </dl>
+           
+              
+            <dl id="btnBury" class="digg digg_disable"  onclick="btnburya();">
+              
+                  <dt>踩</dt>
+                <dd>0</dd>               
+            </dl>
+            
+        </div>
+     <div class="tracking-ad" data-mod="popu_222"><a href="javascript:void(0);" >&nbsp;</a>   </div>
+    <div class="tracking-ad" data-mod="popu_223"> <a href="javascript:void(0);" >&nbsp;</a></div>
+    <script type="text/javascript">
+                function btndigga() {
+                    $(".tracking-ad[data-mod='popu_222'] a").click();
+                }
+                function btnburya() {
+                    $(".tracking-ad[data-mod='popu_223'] a").click();
+                }
+            </script>
+
+   <ul class="article_next_prev">
+                <li class="prev_article"><span  onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian']);location.href='/wangbo1981814/article/details/32704089';">上一篇</span><a href="/wangbo1981814/article/details/32704089" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian'])">如何配置IIS运行 ASPX</a></li>
+                <li class="next_article"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian']);location.href='/wangbo1981814/article/details/47088755';">下一篇</span><a href="/wangbo1981814/article/details/47088755" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian'])">iOS-WebP</a></li>
+    </ul>
+
+    <div style="clear:both; height:10px;"></div>
+
+
+        <div class="similar_article"  style="display:none">
+                <h4>我的同类文章</h4>
+                <div class="similar_c"style="margin:20px 0px 0px 0px">
+                    <div class="similar_c_t">
+                                <label class="similar_cur">
+                                    <span  style="cursor:pointer"  onclick="GetCategoryArticles('2387525','wangbo1981814','foot','37651991');">ios<em>（1）</em></span>
+                                </label>
+                    </div>
+                   
+                    <div class="similar_wrap tracking-ad" data-mod="popu_141"  style="max-height:195px;">
+                        <a href="http://blog.csdn.net" style="display:none">http://blog.csdn.net</a>
+                        <ul class="similar_list fl">                          
+                        </ul>
+
+                        <ul class="similar_list fr">                           
+                        </ul>
+                    </div>
+                </div>
+            </div>    
+    <script  type="text/javascript">
+        $(function () {
+            GetCategoryArticles('2387525', 'wangbo1981814','foot','37651991');
+        });
+    </script>
+      
+</div>
+
+    <div>
+            <ins data-revive-zoneid="205" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57"></ins> 
+     </div>
+
+<div id="suggest"></div>
+         <script  language="javascript" type='text/javascript'>     
+             $(function(){
+                 $.get("/wangbo1981814/svc/GetSuggestContent/37651991",function(data){
+                     $("#suggest").html(data);
+                 });     
+             });             
+         </script>  
+
+
+<style>
+.blog-ass-articl dd {
+color: #369;
+width: 99%; /*修改行*/
+float: left;
+overflow: hidden;
+font: normal normal 12px/23px "SimSun";
+height: 23px;
+margin: 0;
+padding: 0 0 0 10px;
+margin-right: 30px;
+background: url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;
+}
+</style>
+
+ <link rel="stylesheet" href="http://static.blog.csdn.net/css/replace.css"/>
+<div id="relate" data-mod="popu_218"  class="tracking-ad">
+        <div class="relate_t">
+            <h3><span>参考知识库</span></h3>
+        </div>
+        <div class="relate_c">
+        </div>
+</div>
+ 
+
+<dl class="blog-ass-articl" id="res-relatived" > 
+    <div class="embody embody_b" id="libkeyparent"  style="display:none">
+            <span class="embody_t">更多资料请参考：</span>
+            <div class="embody_c" id="libkey"></div>
+    </div>
+
+
+     <dt><span>猜你在找</span></dt>    
+
+
+   
+
+
+    <div id="adCollege" style="width: 42%;float: left;"> 
+        <script src="http://csdnimg.cn/jobreco/job_reco.js" type="text/javascript"></script> 
+        <script type="text/javascript">
+            csdn.position.showEdu({
+                sourceType: "blog",
+                searchType: "detail",
+                searchKey: "37651991",
+                username: "",
+                recordcount: "5",
+                containerId: "adCollege" //容器DIV的id。 
+            });
+        </script> 
+    </div>  
+
+    
+     <div id="res"  data-mod="popu_36"  class="tracking-ad" style="width: 42%;float: left;margin-right: 30px;"></div>
+   
+</dl>
+
+
+<script type="text/javascript">
+    $(function () {
+        setTimeout(function () {
+            var searchtitletags = 'CGContextRef详解' + ',' + $("#tags").html();
+            searchService({
+                index: 'blog',
+                query: searchtitletags,
+                from: 5,
+                size: 5,
+                appendTo: '#res',
+                url: 'recommend',
+                his: 2,
+                client: "blog_cf_enhance",
+                tmpl: '<dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="#{ url }" title="#{ title }" strategy="#{ strategy }">#{ title }</a></dd>'
+            });
+        }, 500);
+    });    
+
+ </script>  
+
+
+    <div id="ad_cen">        
+<ins data-revive-zoneid="71" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57"></ins>    </div>  
+
+    <!-- 广告位开始 -->
+    <ins data-revive-zoneid="72" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57"></ins>
+    <!-- 广告位结束 -->
+
+<div class="comment_class">
+    <div id="comment_title" class="panel_head">
+        <span class="see_comment">查看评论</span><a name="comments"></a></div>
+    <div id="comment_list">
+    </div>
+    <div id="comment_bar">
+    </div>
+    <div id="comment_form">
+    </div>
+    <div class="announce">
+        * 以上用户言论只代表其个人观点，不代表CSDN网站的观点或立场<a name="reply"></a><a name="quote"></a></div>
+</div>
+
+<script type="text/javascript">
+    var fileName = '37651991';
+    var commentscount = 0;
+    var islock = false
+</script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/comment.js"></script>
+    <div id="ad_bot">
+    </div>
+<div id="report_dialog">
+</div>
+
+<div id="d-top"  style="bottom:60px;">
+
+        <a id="quick-reply" class="btn btn-top q-reply" title="快速回复" style="display:none;">
+            <img src="http://static.blog.csdn.net/images/blog-icon-reply.png" alt="快速回复">
+        </a>    
+    <a id="d-top-a" class="btn btn-top backtop"  style="display: none;" title="返回顶部" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_huidaodingbu'])" style="">         
+         <img src="http://static.blog.csdn.net/images/top.png" alt="TOP">
+    </a>
+</div>
+<script type="text/javascript">
+    $(function ()
+    {
+        $("#ad_frm_0").height("90px");
+        
+        setTimeout(function(){
+            $("#ad_frm_2").height("200px");
+        },1000);    
+    });
+  
+</script>
+<style type="text/css">
+    .tag_list
+    {
+        background: none repeat scroll 0 0 #FFFFFF;
+        border: 1px solid #D7CBC1;
+        color: #000000;
+        font-size: 12px;
+        line-height: 20px;
+        list-style: none outside none;
+        margin: 10px 2% 0 1%;
+        padding: 1px;
+    }
+    .tag_list h5
+    {
+        background: none repeat scroll 0 0 #E0DBD3;
+        color: #47381C;
+        font-size: 12px;
+        height: 24px;
+        line-height: 24px;
+        padding: 0 5px;
+        margin: 0;
+    }
+    .tag_list h5 a
+    {
+        color: #47381C;
+    }
+    .classify
+    {
+        margin: 10px 0;
+        padding: 4px 12px 8px;
+    }
+    .classify a
+    {
+        margin-right: 20px;
+        white-space: nowrap;
+    }
+</style>
+
+
+<div class="tag_list" style="display:none"></div>
+  <script  language="javascript" type='text/javascript'>     
+      $(function(){
+              setTimeout(function(){
+                  $.get("/wangbo1981814/svc/GetTagContent",function(data){
+                      $(".tag_list").html(data).show();
+                  });     
+              });
+          },500);                       
+ </script> 
+
+
+<div id="pop_win" style="display:none ;position: absolute; z-index: 10000; border: 1px solid rgb(220, 220, 220); top: 222.5px; left: 630px; opacity: 1; background: none 0px 0px repeat scroll rgb(255, 255, 255);">
+    
+</div>
+<div id="popup_mask"></div>
+<style>
+    #popup_mask
+    {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        z-index: 9999;
+        left: 0px;
+        top: 0px;
+        opacity: 0.3;
+        filter: alpha(opacity=30);
+        display: none;
+    }
+
+</style>
+
+
+
+
+<script type="text/javascript">
+    $(function(){
+        setTimeout(function(){
+            $(".comment_body:contains('回复')").each(function(index,item){
+                var u=$(this).text().split('：')[0].toString().replace("回复","")
+                var thisComment=$(this);
+                if(u)
+                {
+                    $.getJSON("https://passport.csdn.net/get/nick?callback=?", {users: u}, function(a) {
+                        if(a!=null&&a.data!=null&&a.data.length>0)
+                        {
+                            nick=a.data[0].n; 
+                            if(u!=nick)
+                            {
+                                thisComment.text(thisComment.text().replace(u,nick));  
+                            }
+                        }       
+                    });  
+                }
+            });         
+
+        },200);  
+
+        setTimeout(function(){
+            $(".math").each(function(index,value){$(this).find("span").last().css("color","#fff"); })
+        },5000);
+
+        setTimeout(function(){
+            $(".math").each(function(index,value){$(this).find("span").last().css("color","#fff"); })
+        },10000);
+
+        setTimeout(function(){
+            $(".math").each(function(index,value){$(this).find("span").last().css("color","#fff"); })
+        },15000);
+        
+        setTimeout(function(){
+            $("a img[src='http://js.tongji.linezing.com/stats.gif']").parent().css({"position":"absolute","left":"50%"});
+        },300);
+    });
+
+    function loginbox(){
+        var $logpop=$("#pop_win");
+        $logpop.html('<iframe src="https://passport.csdn.net/account/loginbox?service=http://static.blog.csdn.net/callback.htm" frameborder="0" height="600" width="400" scrolling="no"></iframe>');
+
+        $('#popup_mask').css({
+            opacity: 0.5,
+            width: $( document ).width() + 'px',
+            height:  $( document ).height() + 'px'
+        });
+        $('#popup_mask').css("display","block");
+ 
+        $logpop.css( {
+            top: ($( window ).height() - $logpop.height())/ 2  + $( window 
+       ).scrollTop() + 'px',
+            left:($( window ).width() - $logpop.width())/ 2
+        } );
+ 
+        setTimeout( function () {
+            $logpop.show();
+            $logpop.css( {
+                opacity: 1
+            } );
+        }, 200 );
+ 
+        $('#popup_mask').unbind("click");
+        $('#popup_mask').bind("click", function(){
+            $('#popup_mask').hide();
+            var $clopop = $("#pop_win");
+            $("#common_ask_div_sc").css("display","none");
+            $clopop.css( {
+                opacity: 0
+            } );
+            setTimeout( function () {
+                $clopop.hide();
+            }, 350 );
+            return false;
+        });
+    }   
+
+</script>
+ <script language="javascript" type="text/javascript" src="http://ads.csdn.net/js/async_new.js"></script>      
+
+
+
+
+                        <div class="clear">
+                        </div>
+                    </div>                   
+                
+            </div>
+                   
+           <div id="side">
+               
+    <div class="side">
+<div id="panel_Profile" class="panel">
+<ul class="panel_head"><span>个人资料</span></ul>
+<ul class="panel_body profile">
+<div id="blog_userface">
+    <a href="http://my.csdn.net/wangbo1981814" target="_blank">
+    <img src="http://avatar.csdn.net/9/A/6/1_wangbo1981814.jpg" title="访问我的空间" style="max-width:90%"/>
+    </a>
+    <br />
+    <span><a href="http://my.csdn.net/wangbo1981814" class="user_name" target="_blank">wangbo1981814</a></span>
+</div>
+<div class="interact">
+
+    <a href="javascript:void(0);" class="attent" id="span_add_follow" title="[加关注]"></a>
+
+ <a href="javascript:void(0);" class="letter"  title="[发私信]" onclick="window.open('http://msg.csdn.net/letters/model?receiver=wangbo1981814','_blank','height=350,width=700');_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_sixin'])"></a>  
+</div>
+<div id="blog_medal">
+                <div id="bms_box">
+               </div>
+</div>
+<ul id="blog_rank">
+    <li>访问：<span>5009次</span></li>
+    <li>积分：<span>54</span> </li>    
+    <li >等级： <span style="position:relative;display:inline-block;z-index:1" >
+            <img src="http://c.csdnimg.cn/jifen/images/xunzhang/jianzhang/blog1.png" alt="" style="vertical-align: middle;" id="leveImg">
+            <div id="smallTittle" style=" position: absolute;  left: -24px;  top: 25px;  text-align: center;  width: 101px;  height: 32px;  background-color: #fff;  line-height: 32px;  border: 2px #DDDDDD solid;  box-shadow: 0px 2px 2px rgba (0,0,0,0.1);  display: none;   z-index: 999;">
+            <div style="left: 42%;  top: -8px;  position: absolute;  width: 0;  height: 0;  border-left: 10px solid transparent;  border-right: 10px solid transparent;  border-bottom: 8px solid #EAEAEA;"></div>
+            积分：54 </div>
+        </span>  </li>
+    <li>排名：<span>千里之外</span></li>
+</ul>
+<ul id="blog_statistics">
+    <li>原创：<span>0篇</span></li>
+    <li>转载：<span>3篇</span></li>
+    <li>译文：<span>0篇</span></li>
+    <li>评论：<span>0条</span></li>
+</ul>
+</ul>
+</div>
+
+
+<div class="panel" id="panel_Search">
+    <ul class="panel_head"><span>文章搜索</span></ul>
+    <ul class="panel_body">
+        <form id="frmSearch" action="http://so.csdn.net/search" class="form_search" target="_blank">
+        <span><input id="inputSearch" type="text" class="blogsearch" title="请输入关键字" /></span>
+        <input id="btnSubmit" type="button" value="搜索" title="search in blog" />
+        <input type="hidden" name="q" id="inputQ" />
+        <input type="hidden" name="t" value="blog" />
+        <a id="btnSearchBlog" target="_blank"></a>
+        </form>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $("#btnSubmit").click(function () {           
+            search();
+        });
+
+        $("#frmSearch").submit(function () {
+            search();
+            return false;
+        });
+
+        function search()
+        {
+            var url = "http://so.csdn.net/so/search/s.do?q=" + encodeURIComponent($("#inputSearch").val()) + "&u=" + username + "&t=blog";
+            window.location.href = url;
+        }   
+    });
+</script><div id="panel_Category" class="panel">
+<ul class="panel_head"><span>文章分类</span></ul>
+<ul class="panel_body">    
+                 <li>
+                    <a href="/wangbo1981814/article/category/2387525" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">ios</a><span>(2)</span>
+                </li>
+</ul>
+</div><div id="panel_Archive" class="panel">
+<ul class="panel_head"><span>文章存档</span></ul>
+<ul class="panel_body">
+<div id="archive_list">
+<!--归档统计-->
+<li><a href="/wangbo1981814/article/month/2015/07">2015年07月</a><span>(1)</span></li><li><a href="/wangbo1981814/article/month/2014/07">2014年07月</a><span>(1)</span></li><li><a href="/wangbo1981814/article/month/2014/06">2014年06月</a><span>(1)</span></li>
+</div>
+</ul>
+</div>
+<div id="hotarticls" class="panel">
+<ul class="panel_head">
+    <span>       
+阅读排行    </span>
+</ul>
+
+<ul class="panel_body itemlist">
+<li>
+<a href="/wangbo1981814/article/details/37651991" title="CGContextRef详解">CGContextRef详解</a><span>(4743)</span>
+</li>
+<li>
+<a href="/wangbo1981814/article/details/32704089" title="如何配置IIS运行 ASPX">如何配置IIS运行 ASPX</a><span>(120)</span>
+</li>
+<li>
+<a href="/wangbo1981814/article/details/47088755" title="iOS-WebP">iOS-WebP</a><span>(99)</span>
+</li>
+</ul>
+</div>
+<div id="hotarticls2" class="panel">
+<ul class="panel_head"><span>评论排行</span></ul>
+<ul class="panel_body itemlist">
+<li>
+<a href="/wangbo1981814/article/details/32704089" title="如何配置IIS运行 ASPX">如何配置IIS运行 ASPX</a><span>(0)</span>
+</li>
+<li>
+<a href="/wangbo1981814/article/details/37651991" title="CGContextRef详解">CGContextRef详解</a><span>(0)</span>
+</li>
+<li>
+<a href="/wangbo1981814/article/details/47088755" title="iOS-WebP">iOS-WebP</a><span>(0)</span>
+</li>
+</ul>
+</div>
+<div id="homepageArticles" class="panel tracking-ad" data-mod="popu_4">
+<ul class="panel_head"><span>推荐文章</span></ul>
+<ul class="panel_body" id="ad_commend">
+<ul>
+<li><a href="http://blog.csdn.net/laoyang360/article/details/53843771" target="_blank">* 而立之年——三线城市程序员的年终告白</a></li>
+<li><a href="http://blog.csdn.net/sdkfjksf/article/details/54380659" 
+target="_blank">* Java集合框架中隐藏的设计套路</a></li>
+<li><a href="http://blog.csdn.net/jiangwei0910410003/article/details/54092364" 
+target="_blank">* Python脚本下载今日头条视频(附加Android版本辅助下载器)</a></li>
+<li><a href="http://blog.csdn.net/caowenbin/article/details/54406716" target="_blank">* 人工智能的冷思考</a></li>
+<li><a href="http://blog.csdn.net/it_talk/article/details/54346566" 
+target="_blank">* React Native 实战系列教程之热更新原理分析与实现</a></li>
+
+
+</ul></ul>
+</div>
+
+
+    </div>
+    <div class="clear">
+    </div>
+
+
+                   <!-- 广告位开始 --> 
+                    <ins data-revive-zoneid="190" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57"></ins> 
+                    <!-- 广告位结束 -->
+
+           </div>   
+
+            <div class="clear">
+            </div>
+        </div>
+
+        
+
+<script type="text/javascript" src="http://c.csdnimg.cn/rabbit/cnick/cnick.js"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/newblog.min.js"></script>
+
+
+<script type="text/javascript" src="http://medal.blog.csdn.net/showblogmedal.ashx?blogid=793926"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/JavaScript1.js"></script>
+
+    <script type="text/javascript" src="http://passport.csdn.net/content/loginbox/login.js"></script>
+<script type="text/javascript">document.write("<img src=http://counter.csdn.net/pv.aspx?id=24 border=0 width=0 height=0>");</script>
+<script type="text/javascript" src="http://www.csdn.net/ui/scripts/Csdn/counter.js"></script>
+<script type="text/javascript" src="http://ad.csdn.net/scripts/ad-blog.js"></script>
+<script type="text/javascript">
+    $(function () {
+        function __get_code_toolbar(snippet_id) {
+            return $("<span class='tracking-ad' data-mod='popu_167'><a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "' target='_blank' title='在CODE上查看代码片'  style='text-indent:0;'><img src='https://code.csdn.net/assets/CODE_ico.png' width=12 height=12 alt='在CODE上查看代码片' style='position:relative;top:1px;left:2px;'/></a></span>"
+                    + "<span class='tracking-ad' data-mod='popu_170'><a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "/fork' target='_blank' title='派生到我的代码片' style='text-indent:0;'><img src='https://code.csdn.net/assets/ico_fork.svg' width=12 height=12 alt='派生到我的代码片' style='position:relative;top:2px;left:2px;'/></a></span>");
+        }
+        
+        $("[code_snippet_id]").each(function () {
+            __s_id = $(this).attr("code_snippet_id");
+            if (__s_id != null && __s_id != "" && __s_id != 0 && parseInt(__s_id) > 70020) {
+                __code_tool = __get_code_toolbar(__s_id);
+                $(this).prev().find(".tools").append(__code_tool);
+            }
+        });
+
+        $(".bar").show();
+    });
+</script>
+
+
+
+
+
+    </div>
+      <!--new top-->
+    
+    <script id="csdn-toolbar-id" btnId="header_notice_num" wrapId="note1" count="5" subCount="5" type="text/javascript" src="http://c.csdnimg.cn/public/common/toolbar/js/toolbar.js"></script>     <!--new top-->
+   
+    <link href="http://c.csdnimg.cn/comm_ask/css/ask_float_block.css" type="text/css" rel="stylesheet" />
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/libs/wmd.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/libs/showdown.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/libs/prettify.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/apps/ask_float_block.js'></script>
+   
+
+   
+
+  <div id="a52b5334d" style="width: 1px; height: 1px; display: none;">
+                    <script id="adJs52b5334"></script>
+                    <script>document.getElementById("adJs52b5334").src = "http://ads.csdn.net/js/opt/52b5334.js?t=" + Math.random();</script>
+   </div>
+
+    <link rel="stylesheet" href="http://static.blog.csdn.net/css/blog_code.css" />
+    <script type="text/javascript" src="http://static.blog.csdn.net/scripts/saveToCode.js"></script>
+      <script type="text/javascript" src="//csdnimg.cn/rabbit/tracking-ad/main.js?75eacd8"></script>
+
+     <link rel="stylesheet" href="http://static.blog.csdn.net/css/fa.css" />
+
+    <div class="pop_CA_cover"  style="display:none"></div>
+    <div class="pop pop_CA"  style="display:none">
+          <div class="CA_header">
+            收藏助手
+            <span class="cancel_icon"  id="fapancle"  onclick="$('.pop_CA').hide();$('.pop_CA_cover').hide();"></span>
+          </div>
+          <iframe src="" id="fa" frameborder="0" width="100%" height="360"  scrolling="no" />
+    </div>
+</body>
+</html>   
+ 
