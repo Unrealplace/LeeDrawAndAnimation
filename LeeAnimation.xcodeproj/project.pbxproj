@@ -117,6 +117,7 @@
 		B6D34D381E2F993400AF2D0F /* LeeCommenPCH.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeeCommenPCH.pch; sourceTree = "<group>"; };
 		B6D34D3A1E2FB2FE00AF2D0F /* UIView+Property_ExTension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Property_ExTension.h"; sourceTree = "<group>"; };
 		B6D34D3B1E2FB2FE00AF2D0F /* UIView+Property_ExTension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Property_ExTension.m"; sourceTree = "<group>"; };
+		B6D34D3D1E2FC41A00AF2D0F /* LRMacroDefinitionHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LRMacroDefinitionHeader.h; sourceTree = "<group>"; };
 		B6D4824B1E154B5C00BA53F4 /* LeeAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeeAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D4824F1E154B5C00BA53F4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B6D482511E154B5C00BA53F4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -252,6 +253,7 @@
 				B6D482511E154B5C00BA53F4 /* AppDelegate.h */,
 				B6D482521E154B5C00BA53F4 /* AppDelegate.m */,
 				0411AE3A1E28A266007E084F /* LeeCommonHeader.h */,
+				B6D34D3D1E2FC41A00AF2D0F /* LRMacroDefinitionHeader.h */,
 				B6D34D3A1E2FB2FE00AF2D0F /* UIView+Property_ExTension.h */,
 				B6D34D3B1E2FB2FE00AF2D0F /* UIView+Property_ExTension.m */,
 				B6A3FC521E1797620067172C /* 111.png */,
