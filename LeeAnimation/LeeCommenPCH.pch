@@ -1,0 +1,20 @@
+//
+//  LeeCommenPCH.pch
+//  LeeAnimation
+//
+//  Created by LiYang on 17/1/18.
+//  Copyright © 2017年 LiYang. All rights reserved.
+//
+
+#ifndef LeeCommenPCH_pch
+#define LeeCommenPCH_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "LeeCommonHeader.h"
+#import "UIView+Property_ExTension.h"
+
+
+
+#endif /* LeeCommenPCH_pch */

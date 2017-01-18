@@ -32,6 +32,8 @@
 		B6B926AF1E2670800077EA94 /* LeeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B926AE1E2670800077EA94 /* LeeLayer.m */; };
 		B6C50E1E1E1E865200F00CB1 /* LeeDrawView1.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C50E1D1E1E865200F00CB1 /* LeeDrawView1.m */; };
 		B6D1887C1E1BEEBC0016F7D3 /* LeeUiViewAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D1887B1E1BEEBC0016F7D3 /* LeeUiViewAnimation.m */; };
+		B6D34D371E2F972D00AF2D0F /* LeeDrawColorSpaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D34D361E2F972D00AF2D0F /* LeeDrawColorSpaceView.m */; };
+		B6D34D3C1E2FB2FE00AF2D0F /* UIView+Property_ExTension.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D34D3B1E2FB2FE00AF2D0F /* UIView+Property_ExTension.m */; };
 		B6D482501E154B5C00BA53F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D4824F1E154B5C00BA53F4 /* main.m */; };
 		B6D482531E154B5C00BA53F4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D482521E154B5C00BA53F4 /* AppDelegate.m */; };
 		B6D482561E154B5C00BA53F4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D482551E154B5C00BA53F4 /* ViewController.m */; };
@@ -110,6 +112,11 @@
 		B6C50E1D1E1E865200F00CB1 /* LeeDrawView1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeeDrawView1.m; sourceTree = "<group>"; };
 		B6D1887A1E1BEEBC0016F7D3 /* LeeUiViewAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeeUiViewAnimation.h; sourceTree = "<group>"; };
 		B6D1887B1E1BEEBC0016F7D3 /* LeeUiViewAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeeUiViewAnimation.m; sourceTree = "<group>"; };
+		B6D34D351E2F972D00AF2D0F /* LeeDrawColorSpaceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeeDrawColorSpaceView.h; sourceTree = "<group>"; };
+		B6D34D361E2F972D00AF2D0F /* LeeDrawColorSpaceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeeDrawColorSpaceView.m; sourceTree = "<group>"; };
+		B6D34D381E2F993400AF2D0F /* LeeCommenPCH.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeeCommenPCH.pch; sourceTree = "<group>"; };
+		B6D34D3A1E2FB2FE00AF2D0F /* UIView+Property_ExTension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Property_ExTension.h"; sourceTree = "<group>"; };
+		B6D34D3B1E2FB2FE00AF2D0F /* UIView+Property_ExTension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Property_ExTension.m"; sourceTree = "<group>"; };
 		B6D4824B1E154B5C00BA53F4 /* LeeAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeeAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D4824F1E154B5C00BA53F4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B6D482511E154B5C00BA53F4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -196,6 +203,8 @@
 				0411AE381E28A239007E084F /* LeeImageDrawView.m */,
 				B61E56411E27C50600F5901D /* LeeDrawView2.h */,
 				B61E56421E27C50600F5901D /* LeeDrawView2.m */,
+				B6D34D351E2F972D00AF2D0F /* LeeDrawColorSpaceView.h */,
+				B6D34D361E2F972D00AF2D0F /* LeeDrawColorSpaceView.m */,
 				B6B926AD1E2670800077EA94 /* LeeLayer.h */,
 				B6B926AE1E2670800077EA94 /* LeeLayer.m */,
 			);
@@ -243,11 +252,14 @@
 				B6D482511E154B5C00BA53F4 /* AppDelegate.h */,
 				B6D482521E154B5C00BA53F4 /* AppDelegate.m */,
 				0411AE3A1E28A266007E084F /* LeeCommonHeader.h */,
+				B6D34D3A1E2FB2FE00AF2D0F /* UIView+Property_ExTension.h */,
+				B6D34D3B1E2FB2FE00AF2D0F /* UIView+Property_ExTension.m */,
 				B6A3FC521E1797620067172C /* 111.png */,
 				B6A3FC541E1797670067172C /* 222.png */,
 				B6A3FC561E1798690067172C /* 屏幕快照 2016-12-31 下午3.40.11.png */,
 				B6D482541E154B5C00BA53F4 /* ViewController.h */,
 				B6D482551E154B5C00BA53F4 /* ViewController.m */,
+				B6D34D381E2F993400AF2D0F /* LeeCommenPCH.pch */,
 				B62D18851E192B0300556B0B /* 综合动画演练 */,
 				B62D18841E192AE500556B0B /* 核心动画 */,
 				B6D482811E15522200BA53F4 /* LeeBaseAnimationVC.h */,
@@ -436,6 +448,7 @@
 				0411AE391E28A239007E084F /* LeeImageDrawView.m in Sources */,
 				B62D187D1E18A73500556B0B /* LeeCASpringAnimation4.m in Sources */,
 				B6B926AF1E2670800077EA94 /* LeeLayer.m in Sources */,
+				B6D34D371E2F972D00AF2D0F /* LeeDrawColorSpaceView.m in Sources */,
 				B6D1887C1E1BEEBC0016F7D3 /* LeeUiViewAnimation.m in Sources */,
 				B61E56431E27C50600F5901D /* LeeDrawView2.m in Sources */,
 				B62D18881E192B2100556B0B /* LeeAnimation_1.m in Sources */,
@@ -444,6 +457,7 @@
 				B62D189A1E19517600556B0B /* LeeCAReplicatorLayer.m in Sources */,
 				B6AFB6E81E1A44B40016B4C2 /* LeeCGAffineTransform.m in Sources */,
 				B62D188E1E19378000556B0B /* LeeAnimation_2.m in Sources */,
+				B6D34D3C1E2FB2FE00AF2D0F /* UIView+Property_ExTension.m in Sources */,
 				B60648FA1E17ECDD00536C2E /* LeeCAKeyframeAnimation2.m in Sources */,
 				B6D482531E154B5C00BA53F4 /* AppDelegate.m in Sources */,
 				B6D482861E15525B00BA53F4 /* LeeAnimation1.m in Sources */,
@@ -598,6 +612,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Q9SZGQAPK6;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/LeeAnimation/LeeCommenPCH.pch";
 				INFOPLIST_FILE = LeeAnimation/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -611,6 +627,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Q9SZGQAPK6;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/LeeAnimation/LeeCommenPCH.pch";
 				INFOPLIST_FILE = LeeAnimation/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

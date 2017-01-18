@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "LeeBaseAnimationVC.h"
 
+
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *showTableView;
@@ -35,7 +36,7 @@
     
     [self.showTableView reloadData];
     
-     
+
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
 

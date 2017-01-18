@@ -9,7 +9,7 @@
 #import "LeeDrawView.h"
 #import "LeeDrawView1.h"
 #import "LeeDrawView2.h"
-
+#import "LeeDrawColorSpaceView.h"
 
 @interface LeeDrawView ()
 
@@ -35,7 +35,24 @@
     LeeDrawView2 * view2 = [[LeeDrawView2 alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, self.view.bounds.size.height - 100)];
     view2.backgroundColor = [UIColor whiteColor];
     
-    [self.view addSubview:view2];
+    
+    LeeDrawColorSpaceView * spaceView = [[LeeDrawColorSpaceView alloc] initWithFrame:LeeSetFrame(0, 0, 10, 10)];
+    
+    
+
+    
+    spaceView.backgroundColor = LeeColorWhite;
+    
+    
+    LeeAddView(self.view, spaceView);
+    
+    
+    
+    
+    
+    
+    
+   // [self.view addSubview:view2];
     
 
     

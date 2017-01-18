@@ -90,5 +90,17 @@
 
 
 
+#pragma mark - addView
+
+#define LeeAddView(super,child)  [super addSubview:child]
+
+#define LeeSetFrame(x,y,w,h)(*((CGRect*)&v))    CGRectMake(x, y, w, h);
+
+
+
+
+
+
+
 
 #endif /* LeeCommonHeader_h */
