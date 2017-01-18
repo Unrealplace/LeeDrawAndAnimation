@@ -684,138 +684,137 @@ void drawStripes (void *info, CGContextRef con) {
 //为了说明这个做法，我将绕箭头杆子尾部旋转多个角度重复绘制箭头，并把对箭头的绘图封装为UIImage对象。接着我们简单重复绘制UIImage对象。
 //具体代码如下：
 
-- (void)drawRect:(CGRect)rect {
-    
-    UIGraphicsBeginImageContextWithOptions(CGSizeMake(40,100), NO, 0.0);
-    
-    CGContextRef con = UIGraphicsGetCurrentContext();
-    
-    CGContextSaveGState(con);
-    
-    
-    
-    //绘制三角形镂空区域
-    CGContextMoveToPoint(con, 90 - 80, 100);
-    
-    CGContextAddLineToPoint(con, 100 - 80, 90);
-    
-    CGContextAddLineToPoint(con, 110 - 80, 100);
-    
-    CGContextMoveToPoint(con, 110 - 80, 100);
-    
-    CGContextClosePath(con);
-    
-    
-    
-    
-   //获取裁剪区域 CGContextGetClipBoundingBox(con)
-    CGContextAddRect(con, CGContextGetClipBoundingBox(con));
-    
-    CGContextEOClip(con);
-    
-    
-    
-    
-    
-    
-    //绘制垂直的渐变柱子
-    
-    CGContextMoveToPoint(con, 100 - 80, 100);
-    
-    CGContextAddLineToPoint(con, 100 - 80, 19);
-    
-    CGContextSetLineWidth(con, 20);
-    
-    //窍门是要使用的线描边路径 ( CGContextReplacePathWithStrokedPath ) 然后将其夹 ( CGContextClip ) 要将渐变限制的路径：我理解就是做渐变描边时候用的，俩个方法一起用。
-    
-    
-    CGContextReplacePathWithStrokedPath(con);
-    
-    CGContextClip(con);
-    
-    
-    
-    //绘制渐变
-    CGFloat locs[3] = { 0.0, 0.5, 1.0 };
-    
-    CGFloat colors[12] = {
-        
-        0.3,0.3,0.3,0.8,
-        
-        0.0,0.0,0.0,1.0,
-        
-        0.3,0.3,0.3,0.8
-        
-    };
-    
-    CGColorSpaceRef sp = CGColorSpaceCreateDeviceGray();
-    
-    CGGradientRef grad = CGGradientCreateWithColorComponents (sp, colors, locs, 3);
-    
-    CGContextDrawLinearGradient (con, grad, CGPointMake(89 - 80,0), CGPointMake(111 - 80,0), 0);
-    
-    CGColorSpaceRelease(sp);
-    
-    CGGradientRelease(grad);
+//- (void)drawRect:(CGRect)rect {
+//    
+//    UIGraphicsBeginImageContextWithOptions(CGSizeMake(40,100), NO, 0.0);
+//    
+//    CGContextRef con = UIGraphicsGetCurrentContext();
+//    
+//    CGContextSaveGState(con);
+//    
+//    
+//    
+//    //绘制三角形镂空区域
+//    CGContextMoveToPoint(con, 90 - 80, 100);
+//    
+//    CGContextAddLineToPoint(con, 100 - 80, 90);
+//    
+//    CGContextAddLineToPoint(con, 110 - 80, 100);
+//    
+//    CGContextMoveToPoint(con, 110 - 80, 100);
+//    
+//    CGContextClosePath(con);
+//    
+//    
+//    
+//    
+//   //获取裁剪区域 CGContextGetClipBoundingBox(con)
+//    CGContextAddRect(con, CGContextGetClipBoundingBox(con));
+//    
+//    CGContextEOClip(con);
+//    
+//    
+//    
+//    
+//    
+//    
+//    //绘制垂直的渐变柱子
+//    
+//    CGContextMoveToPoint(con, 100 - 80, 100);
+//    
+//    CGContextAddLineToPoint(con, 100 - 80, 19);
+//    
+//    CGContextSetLineWidth(con, 20);
+//    
+//    //窍门是要使用的线描边路径 ( CGContextReplacePathWithStrokedPath ) 然后将其夹 ( CGContextClip ) 要将渐变限制的路径：我理解就是做渐变描边时候用的，俩个方法一起用。
+//    
+//    
+//    CGContextReplacePathWithStrokedPath(con);
+//    
+//    CGContextClip(con);
+//    
+//    
+//    
+//    //绘制渐变
+//    CGFloat locs[3] = { 0.0, 0.5, 1.0 };
+//    
+//    CGFloat colors[12] = {
+//        
+//        0.3,0.3,0.3,0.8,
+//        
+//        0.0,0.0,0.0,1.0,
+//        
+//        0.3,0.3,0.3,0.8
+//        
+//    };
+//    
+//    CGColorSpaceRef sp = CGColorSpaceCreateDeviceGray();
+//    
+//    CGGradientRef grad = CGGradientCreateWithColorComponents (sp, colors, locs, 3);
+//    
+//    CGContextDrawLinearGradient (con, grad, CGPointMake(89 - 80,0), CGPointMake(111 - 80,0), 0);
+//    
+//    CGColorSpaceRelease(sp);
+//    
+//    CGGradientRelease(grad);
+////
+//   CGContextRestoreGState(con);
+//    
+//    
+//    
+////    // 这个是绘制上面三角形样式
+//    CGColorSpaceRef sp2 = CGColorSpaceCreatePattern(NULL);
+//    
+//    CGContextSetFillColorSpace (con, sp2);
+//    
+//    CGColorSpaceRelease (sp2);
+//    
+//    CGPatternCallbacks callback = {0, &drawStripes, NULL };
+//    
+//    CGAffineTransform tr = CGAffineTransformIdentity;
+//    
+//    CGPatternRef patt = CGPatternCreate(NULL,CGRectMake(0,0,4,4),tr,4,4,kCGPatternTilingConstantSpacingMinimalDistortion,true, &callback);
+//    
+//    CGFloat alph = 1.0;
+//    
+//    CGContextSetFillPattern(con, patt, &alph);
+//    
+//    CGPatternRelease(patt);
+//    
+//    CGContextMoveToPoint(con, 80 - 80, 25);
+//    
+//    CGContextAddLineToPoint(con, 100 - 80, 0);
+//    
+//    CGContextAddLineToPoint(con, 120 - 80, 25);
+//    
+//    CGContextFillPath(con);
+//    
+//    
+//    
 //
-   CGContextRestoreGState(con);
-    
-    
-    
-//    // 这个是绘制上面三角形样式
-    CGColorSpaceRef sp2 = CGColorSpaceCreatePattern(NULL);
-    
-    CGContextSetFillColorSpace (con, sp2);
-    
-    CGColorSpaceRelease (sp2);
-    
-    CGPatternCallbacks callback = {0, &drawStripes, NULL };
-    
-    CGAffineTransform tr = CGAffineTransformIdentity;
-    
-    CGPatternRef patt = CGPatternCreate(NULL,CGRectMake(0,0,4,4),tr,4,4,kCGPatternTilingConstantSpacingMinimalDistortion,true, &callback);
-    
-    CGFloat alph = 1.0;
-    
-    CGContextSetFillPattern(con, patt, &alph);
-    
-    CGPatternRelease(patt);
-    
-    CGContextMoveToPoint(con, 80 - 80, 25);
-    
-    CGContextAddLineToPoint(con, 100 - 80, 0);
-    
-    CGContextAddLineToPoint(con, 120 - 80, 25);
-    
-    CGContextFillPath(con);
-    
-    
-    
-
-    
-    UIImage* im = UIGraphicsGetImageFromCurrentImageContext();
-    
-    UIGraphicsEndImageContext();
-    
-    con = UIGraphicsGetCurrentContext();
-    
-    [im drawAtPoint:CGPointMake(0,0)];
-    
-    
-    for (int i=0; i<3; i++) {
-        
-        CGContextTranslateCTM(con, 20, 100);
-        
-        CGContextRotateCTM(con, 30 * M_PI/180.0);
-        
-        CGContextTranslateCTM(con, -20, -100);
-        
-        [im drawAtPoint:CGPointMake(0,0)];
-        
-    }
-    
-}
-
+//    
+//    UIImage* im = UIGraphicsGetImageFromCurrentImageContext();
+//    
+//    UIGraphicsEndImageContext();
+//    
+//    con = UIGraphicsGetCurrentContext();
+//    
+//    [im drawAtPoint:CGPointMake(0,0)];
+//    
+//    
+//    for (int i=0; i<3; i++) {
+//        
+//        CGContextTranslateCTM(con, 20, 100);
+//        
+//        CGContextRotateCTM(con, 30 * M_PI/180.0);
+//        
+//        CGContextTranslateCTM(con, -20, -100);
+//        
+//        [im drawAtPoint:CGPointMake(0,0)];
+//        
+//    }
+//    
+//}
 
 //变换有多个方法解决我们早期使用CGContextDrawImage函数遇到的倒置问题。相对于逆向绘图，我们选择逆向我们绘图的上下文。实质上，我们对上下文坐标系统应用了一个“倒置”变换。你自上而下移动上下文，接着你通过应用一个让y坐标乘以-1的缩放变换逆向y坐标的方向。
 //
@@ -824,7 +823,6 @@ void drawStripes (void *info, CGContextRef con) {
 //CGContextScaleCTM(con, 1.0, -1.0);
 //
 //上下文的顶部应该被你往下移动多远依赖于你绘制的图片。比如说我们可以绘制没有倒置问题的两个半边的火星图形（前面讨论的一个例子）。
-//
 //CGContextTranslateCTM(con, 0, sz.height); // sz为[mars size]
 //
 //CGContextScaleCTM(con, 1.0, -1.0);
@@ -835,7 +833,152 @@ void drawStripes (void *info, CGContextRef con) {
 
 
 
+//阴影
+//为了在绘图上加入阴影，可在绘图之前设置上下文的阴影值。阴影的位置表示为CGSize，如果CGSize的两个值都是正数，则表示阴影是朝下和朝右的。模糊度被表示为任何一个正数。苹果没有解释缩放的工作方式，但实验表明12是最佳的模糊度，99及以上的模糊度会让阴影变得不成形。
+//
+//我在图9的基础上给上下文加了一个阴影：
+-(void)drawRect:(CGRect)rect{
 
+    
+        UIGraphicsBeginImageContextWithOptions(CGSizeMake(40,100), NO, 0.0);
+    
+        CGContextRef con = UIGraphicsGetCurrentContext();
+    
+        CGContextSaveGState(con);
+    
+    
+      //  CGContextSetShadow(con, CGSizeMake(7, 7), 12);
+    
+        //绘制三角形镂空区域
+        CGContextMoveToPoint(con, 90 - 80, 100);
+    
+        CGContextAddLineToPoint(con, 100 - 80, 90);
+    
+        CGContextAddLineToPoint(con, 110 - 80, 100);
+    
+        CGContextMoveToPoint(con, 110 - 80, 100);
+    
+        CGContextClosePath(con);
+    
+    
+    
+    
+       //获取裁剪区域 CGContextGetClipBoundingBox(con)
+        CGContextAddRect(con, CGContextGetClipBoundingBox(con));
+    
+        CGContextEOClip(con);
+    
+    
+    
+    
+    
+    
+        //绘制垂直的渐变柱子
+    
+        CGContextMoveToPoint(con, 100 - 80, 100);
+    
+        CGContextAddLineToPoint(con, 100 - 80, 19);
+    
+        CGContextSetLineWidth(con, 20);
+    
+        //窍门是要使用的线描边路径 ( CGContextReplacePathWithStrokedPath ) 然后将其夹 ( CGContextClip ) 要将渐变限制的路径：我理解就是做渐变描边时候用的，俩个方法一起用。
+    
+    
+        CGContextReplacePathWithStrokedPath(con);
+    
+        CGContextClip(con);
+    
+    
+        //绘制渐变
+        CGFloat locs[3] = { 0.0, 0.5, 1.0 };
+    
+        CGFloat colors[12] = {
+    
+            0.3,0.3,0.3,0.8,
+    
+            0.0,0.0,0.0,1.0,
+    
+            0.3,0.3,0.3,0.8
+    
+        };
+    
+        CGColorSpaceRef sp = CGColorSpaceCreateDeviceGray();
+    
+        CGGradientRef grad = CGGradientCreateWithColorComponents (sp, colors, locs, 3);
+    
+        CGContextDrawLinearGradient (con, grad, CGPointMake(89 - 80,0), CGPointMake(111 - 80,0), 0);
+    
+        CGColorSpaceRelease(sp);
+    
+        CGGradientRelease(grad);
+    
+       CGContextRestoreGState(con);
+    
+    
+    
+    //    // 这个是绘制上面三角形样式
+        CGColorSpaceRef sp2 = CGColorSpaceCreatePattern(NULL);
+    
+        CGContextSetFillColorSpace (con, sp2);
+    
+        CGColorSpaceRelease (sp2);
+    
+        CGPatternCallbacks callback = {0, &drawStripes, NULL };
+    
+        CGAffineTransform tr = CGAffineTransformIdentity;
+    
+        CGPatternRef patt = CGPatternCreate(NULL,CGRectMake(0,0,4,4),tr,4,4,kCGPatternTilingConstantSpacingMinimalDistortion,true, &callback);
+    
+        CGFloat alph = 1.0;
+    
+        CGContextSetFillPattern(con, patt, &alph);
+    
+        CGPatternRelease(patt);
+    
+        CGContextMoveToPoint(con, 80 - 80, 25);
+    
+        CGContextAddLineToPoint(con, 100 - 80, 0);
+    
+        CGContextAddLineToPoint(con, 120 - 80, 25);
+    
+        CGContextFillPath(con);
+    
+    
+    
+    
+    
+        UIImage* im = UIGraphicsGetImageFromCurrentImageContext();
+    
+        UIGraphicsEndImageContext();
+        
+        con = UIGraphicsGetCurrentContext();
+        
+        [im drawAtPoint:CGPointMake(0,0)];
+    
+    
+    
+        
+        for (int i=0; i<3; i++) {
+            
+            CGContextTranslateCTM(con, 20, 100);
+            
+            CGContextRotateCTM(con, 30 * M_PI/180.0);
+            
+            CGContextTranslateCTM(con, -20, -100);
+            
+            [im drawAtPoint:CGPointMake(0,0)];
+            
+        }
+
+    
+    
+    
+    con = UIGraphicsGetCurrentContext();
+    
+    CGContextSetShadow(con, CGSizeMake(7, 7), 12);
+    
+    [im drawAtPoint:CGPointMake(0,0)];
+}
 
 
 
