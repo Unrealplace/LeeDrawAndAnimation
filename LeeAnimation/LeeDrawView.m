@@ -36,20 +36,21 @@
     view2.backgroundColor = [UIColor whiteColor];
     
     
-    LeeDrawColorSpaceView * spaceView = [[LeeDrawColorSpaceView alloc] initWithFrame:LeeSetFrame(0, 0, 10, 10)];
+    LeeDrawColorSpaceView * spaceView = [[LeeDrawColorSpaceView alloc] initWithFrame:CGRectMake(10, 10, 100, 100)];
     
-    
-
     
     spaceView.backgroundColor = LeeColorWhite;
     
+    
+     
     
     LeeAddView(self.view, spaceView);
     
     
     
-    
-    
+    LeeLog(@"%@",NSStringFromCGSize (LeeSizeCeil(spaceView.frame.size)));
+    LeeLog(@"%@",NSStringFromCGSize(LeeSizeFlatted(spaceView.frame.size)));
+
     
     
    // [self.view addSubview:view2];
