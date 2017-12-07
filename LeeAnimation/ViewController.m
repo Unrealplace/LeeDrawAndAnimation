@@ -16,6 +16,7 @@
 
 @property (nonatomic,strong)NSArray * titleArray;
 @property (nonatomic,strong)NSArray * otherArray;
+@property (nonatomic, strong) NSArray    *drawArray;
 
 
 @end
@@ -34,13 +35,19 @@
     
     self.otherArray = @[@"LeeAnimation_1"];
     
+    self.drawArray = @[
+                       @"BitmapGraphicsContextVC",
+                       ];
+    
+    
+    
     [self.showTableView reloadData];
     
 
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
 
-    return 2;
+    return 3;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
@@ -52,7 +59,7 @@
         return _otherArray.count;
     }else{
     
-        return 4;
+        return _drawArray.count;
     }
 }
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -68,13 +75,13 @@
     
     if(indexPath.section == 0){
         cell.textLabel.text = self.titleArray[indexPath.row];
-
     }
-    
-    
     if (indexPath.section == 1) {
         cell.textLabel.text = self.otherArray[indexPath.row];
- 
+    }
+    if (indexPath.section == 2  ) {
+        cell.textLabel.text = self.drawArray[indexPath.row];
+        
     }
     
     return cell;
@@ -103,8 +110,10 @@
         titleLabel.text = @"动画综合演练";
         return titleLabel;
    }else{
-   
-       return nil;
+       UILabel * titleLabel = [UILabel new];
+       titleLabel.frame = CGRectMake(0, 0, self.view.frame.size.width, 44);
+       titleLabel.text = @"绘图学习";
+       return titleLabel;
    }
 }
 
@@ -215,7 +224,7 @@
                 break;
         }
  
-    }else{
+    }else if ( indexPath.section == 1){
     
         switch (indexPath.row) {
             case  0:{
@@ -230,6 +239,8 @@
                 break;
         }
         
+    }else {
+        [self.navigationController pushViewController:[NSClassFromString(_drawArray[indexPath.row]) new] animated:YES];
     }
     
     
