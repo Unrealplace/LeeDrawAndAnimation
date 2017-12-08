@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0411AE391E28A239007E084F /* LeeImageDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0411AE381E28A239007E084F /* LeeImageDrawView.m */; };
+		2BFA46D31FDA92900049D7B6 /* MosicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFA46D21FDA92900049D7B6 /* MosicVC.m */; };
 		B6058B061FD991DE00B7953F /* BitmapGraphicsContextVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B6058B051FD991DE00B7953F /* BitmapGraphicsContextVC.m */; };
 		B60648FA1E17ECDD00536C2E /* LeeCAKeyframeAnimation2.m in Sources */ = {isa = PBXBuildFile; fileRef = B60648F91E17ECDD00536C2E /* LeeCAKeyframeAnimation2.m */; };
 		B60648FD1E180B6000536C2E /* LeeCATransition3.m in Sources */ = {isa = PBXBuildFile; fileRef = B60648FC1E180B6000536C2E /* LeeCATransition3.m */; };
@@ -26,7 +27,7 @@
 		B62D189D1E19569F00556B0B /* LeeBoomBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = B62D189C1E19569F00556B0B /* LeeBoomBtn.m */; };
 		B6A3FC531E1797620067172C /* 111.png in Resources */ = {isa = PBXBuildFile; fileRef = B6A3FC521E1797620067172C /* 111.png */; };
 		B6A3FC551E1797670067172C /* 222.png in Resources */ = {isa = PBXBuildFile; fileRef = B6A3FC541E1797670067172C /* 222.png */; };
-		B6A3FC571E1798690067172C /* 屏幕快照 2016-12-31 下午3.40.11.png in Resources */ = {isa = PBXBuildFile; fileRef = B6A3FC561E1798690067172C /* 屏幕快照 2016-12-31 下午3.40.11.png */; };
+		B6A3FC571E1798690067172C /* test1.png in Resources */ = {isa = PBXBuildFile; fileRef = B6A3FC561E1798690067172C /* test1.png */; };
 		B6AFB6E21E1A2B920016B4C2 /* loadLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AFB6E11E1A2B920016B4C2 /* loadLayer.m */; };
 		B6AFB6E51E1A387E0016B4C2 /* LeeCATransform3D.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AFB6E41E1A387E0016B4C2 /* LeeCATransform3D.m */; };
 		B6AFB6E81E1A44B40016B4C2 /* LeeCGAffineTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AFB6E71E1A44B40016B4C2 /* LeeCGAffineTransform.m */; };
@@ -68,6 +69,8 @@
 		0411AE371E28A239007E084F /* LeeImageDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeeImageDrawView.h; sourceTree = "<group>"; };
 		0411AE381E28A239007E084F /* LeeImageDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeeImageDrawView.m; sourceTree = "<group>"; };
 		0411AE3A1E28A266007E084F /* LeeCommonHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeeCommonHeader.h; sourceTree = "<group>"; };
+		2BFA46D11FDA92900049D7B6 /* MosicVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MosicVC.h; sourceTree = "<group>"; };
+		2BFA46D21FDA92900049D7B6 /* MosicVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MosicVC.m; sourceTree = "<group>"; };
 		B6058B041FD991DE00B7953F /* BitmapGraphicsContextVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BitmapGraphicsContextVC.h; sourceTree = "<group>"; };
 		B6058B051FD991DE00B7953F /* BitmapGraphicsContextVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BitmapGraphicsContextVC.m; sourceTree = "<group>"; };
 		B60648F81E17ECDD00536C2E /* LeeCAKeyframeAnimation2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeeCAKeyframeAnimation2.h; sourceTree = "<group>"; };
@@ -102,7 +105,7 @@
 		B62D189C1E19569F00556B0B /* LeeBoomBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeeBoomBtn.m; sourceTree = "<group>"; };
 		B6A3FC521E1797620067172C /* 111.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 111.png; sourceTree = "<group>"; };
 		B6A3FC541E1797670067172C /* 222.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 222.png; sourceTree = "<group>"; };
-		B6A3FC561E1798690067172C /* 屏幕快照 2016-12-31 下午3.40.11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "屏幕快照 2016-12-31 下午3.40.11.png"; sourceTree = "<group>"; };
+		B6A3FC561E1798690067172C /* test1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test1.png; sourceTree = "<group>"; };
 		B6AFB6E01E1A2B920016B4C2 /* loadLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = loadLayer.h; path = ../loadLayer.h; sourceTree = "<group>"; };
 		B6AFB6E11E1A2B920016B4C2 /* loadLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = loadLayer.m; path = ../loadLayer.m; sourceTree = "<group>"; };
 		B6AFB6E31E1A387E0016B4C2 /* LeeCATransform3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeeCATransform3D.h; sourceTree = "<group>"; };
@@ -173,6 +176,8 @@
 			children = (
 				B6058B041FD991DE00B7953F /* BitmapGraphicsContextVC.h */,
 				B6058B051FD991DE00B7953F /* BitmapGraphicsContextVC.m */,
+				2BFA46D11FDA92900049D7B6 /* MosicVC.h */,
+				2BFA46D21FDA92900049D7B6 /* MosicVC.m */,
 			);
 			path = "绘图学习";
 			sourceTree = "<group>";
@@ -270,7 +275,7 @@
 				B6D34D3B1E2FB2FE00AF2D0F /* UIView+Property_ExTension.m */,
 				B6A3FC521E1797620067172C /* 111.png */,
 				B6A3FC541E1797670067172C /* 222.png */,
-				B6A3FC561E1798690067172C /* 屏幕快照 2016-12-31 下午3.40.11.png */,
+				B6A3FC561E1798690067172C /* test1.png */,
 				B6D482541E154B5C00BA53F4 /* ViewController.h */,
 				B6D482551E154B5C00BA53F4 /* ViewController.m */,
 				B6D34D381E2F993400AF2D0F /* LeeCommenPCH.pch */,
@@ -381,7 +386,7 @@
 				TargetAttributes = {
 					B6D4824A1E154B5C00BA53F4 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 9BQNL96S8U;
+						DevelopmentTeam = CD678479PM;
 						ProvisioningStyle = Automatic;
 					};
 					B6D482631E154B5D00BA53F4 = {
@@ -421,7 +426,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6A3FC571E1798690067172C /* 屏幕快照 2016-12-31 下午3.40.11.png in Resources */,
+				B6A3FC571E1798690067172C /* test1.png in Resources */,
 				B6A3FC551E1797670067172C /* 222.png in Resources */,
 				B6D4825E1E154B5D00BA53F4 /* LaunchScreen.storyboard in Resources */,
 				B6D4825B1E154B5D00BA53F4 /* Assets.xcassets in Resources */,
@@ -471,6 +476,7 @@
 				B62D18801E18B28F00556B0B /* LeeCAAnimationGroup5.m in Sources */,
 				B6058B061FD991DE00B7953F /* BitmapGraphicsContextVC.m in Sources */,
 				B62D189A1E19517600556B0B /* LeeCAReplicatorLayer.m in Sources */,
+				2BFA46D31FDA92900049D7B6 /* MosicVC.m in Sources */,
 				B6AFB6E81E1A44B40016B4C2 /* LeeCGAffineTransform.m in Sources */,
 				B62D188E1E19378000556B0B /* LeeAnimation_2.m in Sources */,
 				B6D34D3C1E2FB2FE00AF2D0F /* UIView+Property_ExTension.m in Sources */,
@@ -627,7 +633,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9BQNL96S8U;
+				DEVELOPMENT_TEAM = CD678479PM;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LeeAnimation/LeeCommenPCH.pch";
 				INFOPLIST_FILE = LeeAnimation/Info.plist;
@@ -642,7 +648,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9BQNL96S8U;
+				DEVELOPMENT_TEAM = CD678479PM;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LeeAnimation/LeeCommenPCH.pch";
 				INFOPLIST_FILE = LeeAnimation/Info.plist;

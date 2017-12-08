@@ -37,6 +37,7 @@
     
     self.drawArray = @[
                        @"BitmapGraphicsContextVC",
+                       @"MosicVC",
                        ];
     
     
